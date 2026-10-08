@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Checkout | Apply ECS Card</title>
+    <!-- Bootstrap, FontAwesome, AddressNow, Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://api.addressnow.co.uk/css/addressnow-2.20.min.css?key=gm26-ce18-kr99-hj91">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <div id="header-container"></div>
+    <script src="header.js"></script>
+    <style>
+        /* ---- CSS (copy from previous answer) ---- */
+        :root {
+            --ecs-blue: #0a2f5c;
+            --ecs-blue-dark: #061d3a;
+            --ecs-red: #d42029;
+            --ecs-gold: #d4a843;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --body-bg: #f6f7f9;
+            --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 6px 16px rgba(0,0,0,0.04);
+            --border-radius: 10px;
+            --border-radius-lg: 14px;
+        }
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body {
+            background: var(--body-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-800);
+            padding: 0;
+            margin: 0;
+        }
+        .page-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px 20px 60px;
+        }
+        .breadcrumb-seo {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 18px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2px;
+        }
+        .breadcrumb-seo a { color: var(--ecs-blue); text-decoration: none; font-weight: 500; }
+        .breadcrumb-seo a:hover { color: var(--ecs-red); text-decoration: underline; }
+        .breadcrumb-seo .separator { margin: 0 6px; opacity: 0.4; font-size: 11px; }
+        .breadcrumb-seo .current { color: var(--gray-600); font-weight: 500; }
+
+        .checkout-header {
+            background: linear-gradient(145deg, #051c34 0%, #0a2f5c 35%, #0d3b6e 65%, #0f427a 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 28px 36px;
+            margin-bottom: 28px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: 0 8px 32px rgba(10,47,92,0.28);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .checkout-header .logo-area h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+        .checkout-header .logo-area h1 small {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.75;
+        }
+        .checkout-header .cart-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(6px);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checkout-header .cart-badge i { color: var(--ecs-gold); }
+
+        .timer-alert {
+            background: var(--ecs-red);
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 12px rgba(212,32,41,0.25);
+        }
+        .timer-alert span {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 14px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--card-shadow);
+            padding: 30px 34px;
+            margin-bottom: 24px;
+            transition: box-shadow 0.25s ease;
+        }
+        .form-card:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.08), 0 12px 28px rgba(0,0,0,0.07); }
+        .form-card .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ecs-blue-dark);
+            margin: 0 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-card .section-title i { color: var(--ecs-gold); width: 24px; text-align: center; }
+        .form-card .form-label { font-weight: 600; font-size: 14px; color: var(--gray-800); margin-bottom: 4px; }
+        .form-card .form-label .text-danger { color: var(--ecs-red); font-weight: 700; }
+        .form-card .form-control, .form-card .form-select {
+            border-radius: 6px;
+            border: 1.5px solid var(--gray-300);
+            padding: 10px 14px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background: #fff;
+            color: var(--gray-800);
+            width: 100%;
+        }
+        .form-card .form-control:focus, .form-card .form-select:focus {
+            border-color: var(--ecs-blue);
+            box-shadow: 0 0 0 3px rgba(10,47,92,0.1);
+            outline: none;
+        }
+        .form-card .form-control.error, .form-card .form-select.error {
+            border-color: var(--ecs-red) !important;
+            border-width: 2px;
+            background: #fff5f5;
+        }
+        .form-card .error-msg {
+            color: var(--ecs-red);
+            font-size: 13px;
+            margin-top: 4px;
+            display: none;
+            font-weight: 500;
+        }
+        .form-card .error-msg.show { display: block; }
+
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+        .radio-group .form-check {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 0;
+        }
+        .radio-group .form-check-input {
+            width: 18px;
+            height: 18px;
+            margin-top: 0;
+            border-radius: 50%;
+            border: 2px solid var(--gray-300);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .radio-group .form-check-input:checked {
+            background-color: var(--ecs-blue);
+            border-color: var(--ecs-blue);
+        }
+
+        .address-lookup-wrapper { position: relative; }
+        .address-lookup-hint {
+            font-size: 13px;
+            color: var(--ecs-blue);
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .address-lookup-hint:hover { color: var(--ecs-red); }
+        .address-lookup-hint.hidden { display: none; }
+        .addressnow-widget { margin-top: 6px; }
+
+        .btn-submit {
+            background: var(--ecs-blue);
+            border: none;
+            border-bottom: 3px solid var(--ecs-blue-dark);
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 14px 48px;
+            border-radius: 50px;
+            transition: 0.22s cubic-bezier(0.4,0,0.2,1);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 16px rgba(10,47,92,0.25);
+            letter-spacing: 0.3px;
+        }
+        .btn-submit:hover {
+            background: var(--ecs-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(10,47,92,0.3);
+            color: #fff;
+        }
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .checkout-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--gray-200);
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+        .checkout-footer .footer-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .checkout-footer .footer-links a:hover { color: var(--ecs-blue); text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .checkout-header { padding: 20px; flex-direction: column; text-align: center; }
+            .form-card { padding: 20px 16px; }
+            .btn-submit { width: 100%; justify-content: center; }
+        }
+        @media (max-width: 480px) {
+            .page-wrapper { padding: 16px 10px 40px; }
+            .form-card { padding: 16px 12px; border-radius: 8px; }
+            .checkout-header .logo-area h1 { font-size: 18px; }
+            .btn-submit { font-size: 15px; padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb-seo" aria-label="Breadcrumb">
+            <a href="https://applyecscard.co.uk/"><i class="fas fa-home" style="font-size:12px;"></i> Home</a>
+            <span class="separator">›</span>
+            <a href="https://applyecscard.co.uk/e-learning">E-Learning</a>
+            <span class="separator">›</span>
+            <span class="current">Checkout</span>
+        </nav>
+
+        <!-- Header -->
+        <div class="checkout-header">
+            <div class="logo-area">
+                <h1>E-Learning Checkout <small>ECS Card</small></h1>
+            </div>
+            <div class="cart-badge">
+                <i class="fas fa-shopping-cart"></i>
+                <span>1 item in cart</span>
+            </div>
+        </div>
+
+        <!-- Timer Alert -->
+        <div class="timer-alert">
+            <i class="fas fa-clock"></i>
+            Please finish filling out your details within <span id="timerDisplay">15:00</span> to avoid losing your data.
+        </div>
+
+        <!-- Form -->
+        <div class="form-card">
+            <div class="text-center mb-4">
+                <h2 style="font-size:24px; font-weight:700; color:var(--ecs-blue);">E-Learning Course</h2>
+                <p style="color:var(--gray-600); font-size:15px; max-width:600px; margin:0 auto;">
+                    Please input the personal details of the candidate. The login details to your online platform will be sent to the email address provided.
+                </p>
+            </div>
+
+            <form method="POST" action="/api/checkout" id="checkoutForm">
+                <!-- Personal Details -->
+                <div class="section-title"><i class="fas fa-user"></i> Personal Details</div>
+
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" required autocomplete="given-name">
+                    <div class="error-msg" id="error-first_name">Please enter your first name (minimum 2 characters).</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name" required autocomplete="family-name">
+                    <div class="error-msg" id="error-last_name">Please enter your last name (minimum 2 characters).</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required autocomplete="email">
+                    <div class="error-msg" id="error-email">Please enter a valid email address.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirm_email" class="form-label">Confirm Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="confirm_email" name="confirm_email" placeholder="Confirm email address" required autocomplete="email">
+                    <div class="error-msg" id="error-confirm_email">Emails do not match. Please re-enter.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g. 07700 900000" required autocomplete="tel">
+                    <div class="error-msg" id="error-phone">Please enter a valid UK phone number (7 digits or more).</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Date of Birth (Day/Month/Year) <span class="text-danger">*</span></label>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <select class="form-select" id="dob_day" name="dob_day" required>
+                                <option value="">Day</option>
+                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                                <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                                <option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                                <option value="16">16</option><option value="17">17</option><option value="18">18</option>
+                                <option value="19">19</option><option value="20">20</option><option value="21">21</option>
+                                <option value="22">22</option><option value="23">23</option><option value="24">24</option>
+                                <option value="25">25</option><option value="26">26</option><option value="27">27</option>
+                                <option value="28">28</option><option value="29">29</option><option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select class="form-select" id="dob_month" name="dob_month" required>
+                                <option value="">Month</option>
+                                <option value="January">January</option><option value="February">February</option>
+                                <option value="March">March</option><option value="April">April</option>
+                                <option value="May">May</option><option value="June">June</option>
+                                <option value="July">July</option><option value="August">August</option>
+                                <option value="September">September</option><option value="October">October</option>
+                                <option value="November">November</option><option value="December">December</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select class="form-select" id="dob_year" name="dob_year" required>
+                                <option value="">Year</option>
+                                <option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option>
+                                <option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option>
+                                <option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option>
+                                <option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option>
+                                <option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option>
+                                <option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option>
+                                <option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option>
+                                <option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option>
+                                <option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option>
+                                <option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option>
+                                <option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option>
+                                <option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option>
+                                <option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option>
+                                <option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option>
+                                <option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option>
+                                <option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option>
+                                <option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option>
+                                <option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option>
+                                <option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option>
+                                <option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option>
+                                <option value="1950">1950</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="error-msg" id="error-dob">Please select your full date of birth.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="company_name" class="form-label">Company Name (Optional)</label>
+                    <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Enter company name if applicable" autocomplete="organization">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Are you a Limited/PLC Company? <span class="text-danger">*</span></label>
+                    <div class="radio-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="is_limited_company" id="company_yes" value="Yes" required>
+                            <label class="form-check-label" for="company_yes">Yes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="is_limited_company" id="company_no" value="No" required>
+                            <label class="form-check-label" for="company_no">No</label>
+                        </div>
+                    </div>
+                    <div class="error-msg" id="error-company">Please select whether you are a Limited/PLC Company.</div>
+                </div>
+
+                <!-- Address Details -->
+                <div class="section-title mt-4"><i class="fas fa-home"></i> Candidate Address Details</div>
+
+                <div class="mb-3 address-lookup-wrapper">
+                    <label for="address_line_1" class="form-label">Address Line 1 <span class="text-danger">*</span></label>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <input type="text" class="form-control flex-grow-1" id="address_line_1" name="address_line_1" placeholder="Start typing your address..." required autocomplete="address-line1">
+                        <span class="address-lookup-hint" id="manualAddressToggle">Enter manually</span>
+                    </div>
+                    <div id="addressnow-widget" class="addressnow-widget"></div>
+                    <div class="error-msg" id="error-address_line_1">Please enter your address.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required autocomplete="address-level2">
+                    <div class="error-msg" id="error-city">Please enter your city.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="postcode" class="form-label">Postcode <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Enter postcode" required autocomplete="postal-code">
+                    <div class="error-msg" id="error-postcode">Please enter a valid UK postcode.</div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="terms" name="terms_accepted" value="1" required>
+                        <label class="form-check-label" for="terms">
+                            I accept the <a href="https://applyecscard.co.uk/terms-conditions" target="_blank">Terms and Conditions</a> &amp; <a href="https://applyecscard.co.uk/privacy-policy" target="_blank">Privacy Policy</a>.
+                        </label>
+                    </div>
+                    <div class="error-msg" id="error-terms">You must accept the Terms and Conditions.</div>
+                </div>
+
+                <!-- Opt Out -->
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="opt_out" name="opt_out_email_marketing" value="1">
+                        <label class="form-check-label" for="opt_out">
+                            Please tick this box if you do not want to receive revision, support or training course information. You can opt out any time.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <i class="fas fa-lock"></i> Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="checkout-footer">
+            <div class="footer-links">
+                <a href="https://applyecscard.co.uk/terms-conditions">Terms</a>
+                <a href="https://applyecscard.co.uk/privacy-policy">Privacy</a>
+                <a href="https://applyecscard.co.uk/contact">Contact</a>
+            </div>
+            <div class="disclaimer">&copy; 2026 Apply ECS Card. All rights reserved.</div>
+        </div>
+    </div>
+
+    <!-- ====== SCRIPTS ====== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://api.addressnow.co.uk/js/addressnow-2.20.min.js?key=gm26-ce18-kr99-hj91"></script>
+
+    <script>
+        // Timer
+        (function() {
+            let totalSeconds = 15 * 60;
+            const timerDisplay = document.getElementById('timerDisplay');
+            if (!timerDisplay) return;
+            function updateTimer() {
+                const mins = Math.floor(totalSeconds / 60);
+                const secs = totalSeconds % 60;
+                timerDisplay.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    timerDisplay.textContent = '00:00';
+                    alert('Your session has timed out. Please refresh the page to start again.');
+                    return;
+                }
+                totalSeconds--;
+            }
+            updateTimer();
+            const timerInterval = setInterval(updateTimer, 1000);
+        })();
+
+        // AddressNow
+        (function() {
+            const addressInput = document.getElementById('address_line_1');
+            const cityInput = document.getElementById('city');
+            const postcodeInput = document.getElementById('postcode');
+            const manualToggle = document.getElementById('manualAddressToggle');
+            const widgetContainer = document.getElementById('addressnow-widget');
+            if (!addressInput || !cityInput || !postcodeInput) return;
+
+            addressNow.listen('ready', function() {
+                addressNow.enable(addressInput, {
+                    onAddressSelected: function(address) {
+                        if (address.town) cityInput.value = address.town;
+                        else if (address.locality) cityInput.value = address.locality;
+                        if (address.postcode) postcodeInput.value = address.postcode;
+                        cityInput.dispatchEvent(new Event('input', { bubbles: true }));
+                        postcodeInput.dispatchEvent(new Event('input', { bubbles: true }));
+                    }
+                });
+                if (widgetContainer) widgetContainer.style.display = 'block';
+            });
+
+            if (manualToggle) {
+                manualToggle.addEventListener('click', function() {
+                    addressNow.disable(addressInput);
+                    addressInput.placeholder = 'Enter address manually';
+                    this.classList.add('hidden');
+                    if (widgetContainer) widgetContainer.style.display = 'none';
+                });
+            }
+
+            try { addressNow.init(); } catch (e) { console.warn('AddressNow init error:', e); }
+        })();
+
+        // ---- Client-side validation (only for better UX, but not required for redirect) ----
+        (function() {
+            const form = document.getElementById('checkoutForm');
+
+            function setError(inputId, errorId, show) {
+                const input = document.getElementById(inputId);
+                const error = document.getElementById(errorId);
+                if (input) input.classList.toggle('error', show);
+                if (error) error.classList.toggle('show', show);
+            }
+
+            // Simple validators (same as before)
+            const validators = {
+                first_name: {
+                    test: (val) => val && val.trim().length >= 2 && /^[a-zA-Z\s]+$/.test(val),
+                    errorId: 'error-first_name'
+                },
+                last_name: {
+                    test: (val) => val && val.trim().length >= 2 && /^[a-zA-Z\s]+$/.test(val),
+                    errorId: 'error-last_name'
+                },
+                email: {
+                    test: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+                    errorId: 'error-email'
+                },
+                confirm_email: {
+                    test: (val) => {
+                        const email = document.getElementById('email')?.value || '';
+                        return val && val === email;
+                    },
+                    errorId: 'error-confirm_email'
+                },
+                phone: {
+                    test: (val) => /^(\+44)?\d{7,}$/.test(val.replace(/\s/g, '')),
+                    errorId: 'error-phone'
+                },
+                dob: {
+                    test: () => {
+                        const day = document.getElementById('dob_day')?.value;
+                        const month = document.getElementById('dob_month')?.value;
+                        const year = document.getElementById('dob_year')?.value;
+                        return day && month && year && day !== '' && month !== '' && year !== '';
+                    },
+                    errorId: 'error-dob',
+                    isGroup: true
+                },
+                company: {
+                    test: () => {
+                        const yes = document.getElementById('company_yes');
+                        const no = document.getElementById('company_no');
+                        return (yes && yes.checked) || (no && no.checked);
+                    },
+                    errorId: 'error-company',
+                    isGroup: true
+                },
+                address_line_1: {
+                    test: (val) => val && val.trim().length > 0,
+                    errorId: 'error-address_line_1'
+                },
+                city: {
+                    test: (val) => val && val.trim().length > 0,
+                    errorId: 'error-city'
+                },
+                postcode: {
+                    test: (val) => /^([A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2})$/i.test(val.trim()),
+                    errorId: 'error-postcode'
+                },
+                terms: {
+                    test: () => {
+                        const chk = document.getElementById('terms');
+                        return chk && chk.checked;
+                    },
+                    errorId: 'error-terms',
+                    isGroup: true
+                }
+            };
+
+            const textInputs = ['first_name', 'last_name', 'email', 'confirm_email', 'phone', 'address_line_1', 'city', 'postcode'];
+            textInputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('blur', function() {
+                        const val = this.value;
+                        const validator = validators[id];
+                        if (validator) setError(id, validator.errorId, !validator.test(val));
+                    });
+                    el.addEventListener('input', function() {
+                        const val = this.value;
+                        const validator = validators[id];
+                        if (validator) setError(id, validator.errorId, !validator.test(val));
+                    });
+                }
+            });
+
+            ['dob_day', 'dob_month', 'dob_year'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('change', function() {
+                        const validator = validators.dob;
+                        setError('dob_day', validator.errorId, !validator.test());
+                    });
+                }
+            });
+
+            ['company_yes', 'company_no'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('change', function() {
+                        const validator = validators.company;
+                        setError('company_yes', validator.errorId, !validator.test());
+                    });
+                }
+            });
+
+            const termsEl = document.getElementById('terms');
+            if (termsEl) {
+                termsEl.addEventListener('change', function() {
+                    const validator = validators.terms;
+                    setError('terms', validator.errorId, !validator.test());
+                });
+            }
+
+            // On submit, do a final validation and if fails, prevent submit
+            form.addEventListener('submit', function(e) {
+                let allValid = true;
+
+                textInputs.forEach(id => {
+                    const el = document.getElementById(id);
+                    const validator = validators[id];
+                    if (el && validator) {
+                        const isValid = validator.test(el.value);
+                        setError(id, validator.errorId, !isValid);
+                        if (!isValid) allValid = false;
+                    }
+                });
+
+                const dobValid = validators.dob.test();
+                setError('dob_day', validators.dob.errorId, !dobValid);
+                if (!dobValid) allValid = false;
+
+                const companyValid = validators.company.test();
+                setError('company_yes', validators.company.errorId, !companyValid);
+                if (!companyValid) allValid = false;
+
+                const termsValid = validators.terms.test();
+                setError('terms', validators.terms.errorId, !termsValid);
+                if (!termsValid) allValid = false;
+
+                if (!allValid) {
+                    e.preventDefault();
+                    const firstError = document.querySelector('.form-control.error, .form-select.error, .form-check-input.error');
+                    if (firstError) firstError.focus();
+                    return;
+                }
+
+                // If all valid, let the form submit naturally (to /api/checkout)
+                // We can also disable the button to prevent double clicks
+                const submitBtn = document.getElementById('submitBtn');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                }
+                // We don't need to prevent default here; it will POST to API
+            });
+        })();
+    </script>
+</body>
+</html>

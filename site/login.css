@@ -1,0 +1,139 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #e9eff6; /* Light ECS blue tone */
+  color: #222;
+  line-height: 1.5;
+
+}
+
+/* ===== Wrapper Box ===== */
+.wrapper {
+  max-width: 520px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 119, 204, 0.15);
+  overflow: hidden;
+  border: 1px solid #d0e2f5;
+  transition: transform 0.3s ease;
+}
+
+.wrapper:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== Header Tabs ===== */
+.toggle-buttons {
+  display: flex;
+  background: #f5f9fc;
+  border-bottom: 2px solid #d0e2f5;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 15px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-buttons button:hover {
+  background: #eef6fd;
+  color: #0077cc;
+}
+
+.toggle-buttons .active {
+  background: #0077cc;
+  color: #fff;
+  border-bottom: 2px solid #005fa3;
+}
+
+/* ===== Forms ===== */
+.form {
+  display: none;
+  padding: 28px 24px;
+  animation: fadeIn 0.4s ease;
+}
+
+.form.active {
+  display: block;
+}
+
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccd8e5;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0,119,204,0.15);
+  outline: none;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: linear-gradient(135deg, #005fa3, #004b82);
+}
+
+.form p {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+}
+
+.form a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .wrapper {
+    margin: 20px;
+  }
+
+  .toggle-buttons button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

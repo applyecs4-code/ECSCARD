@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ Core SEO -->
+  <title>ECS Test Centres UK | Book ECS Health, Safety & Environment Test</title>
+  <meta name="description"
+        content="Find ECS Health, Safety & Environment (HSE) test centres across the UK and book your ECS test. Search by city, centre name or postcode and choose a convenient venue for your ECS card application." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- ✅ Canonical – REAL URL -->
+  <link rel="canonical" href="https://applyecscard.co.uk/ecs-test-centre" />
+
+  <!-- ✅ Open Graph / Social -->
+  <meta property="og:title" content="ECS Test Centres in the UK | ECS HSE Test Booking" />
+  <meta property="og:description"
+        content="Browse ECS Health, Safety & Environment test centres across the UK and book your assessment at a time and place that suits you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://applyecscard.co.uk/ecs-test-centre" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ECS Test Centres in the UK | ECS HSE Test Booking" />
+  <meta name="twitter:description"
+        content="Find and book your nearest ECS Health, Safety & Environment test centre anywhere in the UK." />
+
+  <!-- (Optional) LSI keywords -->
+  <meta name="keywords"
+        content="ECS test centre, ECS Health Safety Environment test, book ECS test, ECS HSE assessment UK, ECS card test centre, electricians ECS test, UK ECS centres" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/test-centres.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Header JS (header.html load karta hai) -->
+  <script src="/header.js" defer></script>
+
+  <!-- ✅ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ECS Test Centres in the UK",
+    "url": "https://applyecscard.co.uk/ecs-test-centre",
+    "description": "Search ECS Health, Safety & Environment (HSE) test centres across the UK and book your ECS test at a convenient location.",
+    "inLanguage": "en-GB",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://applyecscard.co.uk/ecs-test-centre?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Header yahan inject hoga -->
+  <div id="header-container"></div>
+
+  <main class="ecs-centres-page">
+    <section class="ecs-centres-section">
+      <header class="page-header">
+        <h1>ECS Test Centres in the UK</h1>
+        <p>
+          Use the search box to find an ECS Health, Safety &amp; Environment (HSE) test centre by city,
+          centre name or postcode, then book a test slot that fits your schedule.
+        </p>
+      </header>
+
+      <!-- 🔍 Search Box -->
+      <div class="search-box">
+        <label for="centreSearch" class="visually-hidden">Search ECS test centres</label>
+        <input
+          type="text"
+          placeholder="Search by city, centre name or postcode (e.g. Birmingham, Canary Wharf, AB11 6DB)"
+          id="centreSearch"
+          autocomplete="off"
+        >
+        <button type="button" onclick="searchCentre()">
+          <i class="fa fa-search"></i> Search Centre
+        </button>
+      </div>
+
+      <p id="searchHint" class="search-hint">
+        Tip: Start typing your town or postcode and we’ll filter the list in real time.
+      </p>
+
+      <!-- No results msg -->
+      <p id="noResultsMessage" class="no-results" style="display:none;">
+        No ECS test centres match your search. Try a nearby city or a different postcode.
+      </p>
+
+      <!-- ✅ Official ECS Test Centres List (UK-wide) -->
+      <section class="centres-list" aria-label="ECS test centres list">
+
+        <div class="centre">
+          <h2>Birmingham Test Centre</h2>
+          <p>30 Jennens Road, Birmingham</p>
+          <p class="postcode">B7 4EH</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Bradford Test Centre</h2>
+          <p>West Riding House, 31 Cheapside, Bradford</p>
+          <p class="postcode">BD1 4HR</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Canary Wharf, London Test Centre</h2>
+          <p>55 Upper Bank Street, Canary Wharf, London</p>
+          <p class="postcode">E14 5GR</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Liverpool Test Centre</h2>
+          <p>Jack Jones House, 2 Churchill Way, Liverpool</p>
+          <p class="postcode">L3 8EF</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>London (Moreland St) Test Centre</h2>
+          <p>Ron Todd House, 33-37 Moreland Street, London</p>
+          <p class="postcode">EC1V 8BB</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Manchester/Salford Test Centre</h2>
+          <p>Merchants Quay, Salford Quays, Salford</p>
+          <p class="postcode">M50 3SU</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Newcastle Test Centre</h2>
+          <p>John Dobson Street, Newcastle upon Tyne</p>
+          <p class="postcode">NE1 8TW</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Normanton Test Centre</h2>
+          <p>Trident Business Park, Rosie Road, Normanton</p>
+          <p class="postcode">WF6 1GX</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Sheffield Test Centre</h2>
+          <p>Sovereign Court, 300 Barrow Road, Sheffield</p>
+          <p class="postcode">S9 1JQ</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+        <div class="centre">
+          <h2>Stoke-on-Trent Test Centre</h2>
+          <p>140 Broad Street, Stoke-on-Trent</p>
+          <p class="postcode">ST1 4HP</p>
+          <a href="/book.html" class="book-btn">Book Your ECS Test</a>
+        </div>
+
+      </section>
+
+      <p class="centres-note">
+        <strong>Important:</strong> ECS HSE Assessment centres and addresses can change or new venues may be added.
+        Always confirm the latest location and booking instructions through your MyECS account or the official ECS,
+        ECA or Unite websites before travelling.
+      </p>
+    </section>
+
+    <!-- ✅ Extra SEO content -->
+    <section class="ecs-info">
+      <h2>About the ECS Health, Safety &amp; Environment (HSE) Test</h2>
+      <p>
+        The ECS Health, Safety &amp; Environment (HSE) Assessment is the standard test used in the electrotechnical
+        industry to show that you understand key health, safety and environmental requirements before working on site
+        with an ECS card.
+      </p>
+
+      <h2>How to Use This ECS Test Centre Finder</h2>
+      <p>
+        Start typing the town, city, centre name or postcode in the search box above. The list will filter in real
+        time, so you can quickly see which ECS test centres are closest to where you live or work. Once you have
+        chosen a venue, you can continue to book your ECS test through the official provider, or use our ECS card
+        support service to help you choose the right card and assessment route.
+      </p>
+    </section>
+  </main>
+
+  <!-- 🔎 Search Logic -->
+  <script>
+    function searchCentre() {
+      const input = document.getElementById('centreSearch');
+      const filter = input.value.trim().toLowerCase();
+      const centres = document.querySelectorAll('.centres-list .centre');
+      const noResultsMessage = document.getElementById('noResultsMessage');
+
+      let visibleCount = 0;
+
+      centres.forEach(centre => {
+        const text = centre.innerText.toLowerCase(); // name + address + postcode
+        if (!filter || text.includes(filter)) {
+          centre.style.display = "";
+          visibleCount++;
+        } else {
+          centre.style.display = "none";
+        }
+      });
+
+      if (visibleCount === 0 && filter.length > 0) {
+        noResultsMessage.style.display = "block";
+      } else {
+        noResultsMessage.style.display = "none";
+      }
+    }
+
+    document.getElementById('centreSearch').addEventListener('keyup', searchCentre);
+  </script>
+</body>
+</html>

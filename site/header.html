@@ -1,0 +1,961 @@
+        <!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UKECSAPPLY - Professional Electrical Certification in the UK</title>
+  <link rel="icon" href="https://applyecscard.co.uk//img/ecs.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://applyecscard.co.uk//img/ecs.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G95RNYHK78"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G95RNYHK78');
+</script>
+        <style>
+/* ----------- RESET ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------- BODY ----------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #1e3c72; /* dark blue text */
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+/* ============================================
+   PROFESSIONAL RESPONSIVE CSS FOR HEADER
+   Mobile-First | Tablet | Desktop | All Devices
+   ============================================ */
+
+/* ---------- BASE RESET (keep existing) ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #1e3c72;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+/* ---------- HEADER (PRO GLASS STYLE) ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 15px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.header {
+  animation: slideDown 0.5s ease;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+/* ---------- BRAND ---------- */
+.nav-brand {
+  font-size: 1.7rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5f8a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.nav-brand span {
+  background: none;
+  color: #2a5f8a;
+}
+
+/* ---------- DESKTOP MENU ---------- */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #1e3c72;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 40px;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: #eef3fc;
+  color: #0a2c3f;
+}
+
+/* ---------- CTA BUTTON ---------- */
+.cta-button {
+  padding: 10px 24px !important;
+  background: #1e3c72 !important;
+  color: white !important;
+  border-radius: 40px !important;
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+  font-weight: 700 !important;
+}
+.cta-button:hover {
+  background: #0f2d54 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 60, 114, 0.25);
+}
+
+/* ---------- DROPDOWN (DESKTOP) ---------- */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 20px;
+  min-width: 380px;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e5e5;
+  z-index: 1100;
+}
+
+.has-dropdown:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- ACCORDION ---------- */
+.accordion-header {
+  background: none;
+  color: #1e3c72;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.accordion-header:hover {
+  background: #f2f6ff;
+}
+
+.accordion-content {
+  display: none;
+  flex-direction: column;
+  padding-left: 16px;
+  margin-top: 4px;
+}
+
+.accordion-content a {
+  padding: 8px 12px;
+  color: #1e3c72;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.accordion-content a:hover {
+  background: #f2f6ff;
+  color: #000;
+}
+
+/* ---------- UK BADGE ---------- */
+.uk-badge {
+  background: linear-gradient(90deg, #cf142b 33%, #ffffff 33%, #ffffff 66%, #00247d 66%);
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 30px;
+  font-size: 9px;
+  font-weight: 800;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+/* ---------- HAMBURGER (hidden on desktop) ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 2.5px;
+  background: #1e3c72;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* ---------- TABLET (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
+  .nav-menu a {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .dropdown {
+    min-width: 320px;
+  }
+}
+
+/* ---------- MOBILE & TABLET (max-width: 992px) ---------- */
+@media (max-width: 992px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  .header {
+    padding: 12px 18px;
+  }
+  
+  .nav-brand {
+    font-size: 1.5rem;
+  }
+  
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+  
+  /* Mobile Menu - Slide from left */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 360px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 90px 20px 40px;
+    gap: 8px;
+    transition: left 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    z-index: 1050;
+    overflow-y: auto;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.12);
+    border-right: 1px solid #eef2f8;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+  }
+  
+  .nav-menu a {
+    width: 100%;
+    white-space: normal;
+    padding: 14px 16px;
+    font-size: 1rem;
+    justify-content: space-between;
+    border-radius: 14px;
+  }
+  
+  /* Mobile Dropdown - Static positioning */
+  .has-dropdown .dropdown {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    min-width: 100%;
+    background: transparent;
+    border: none;
+    margin-top: 8px;
+    margin-left: 12px;
+    display: none;
+  }
+  
+  .has-dropdown .dropdown.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+  }
+  
+  /* Accordion on mobile */
+  .accordion-header {
+    padding: 12px 8px;
+    font-size: 0.95rem;
+  }
+  
+  .accordion-content {
+    padding-left: 20px;
+  }
+  
+  .accordion-content a {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+  
+  /* CTA button on mobile */
+  .cta-button {
+    text-align: center;
+    justify-content: center;
+    margin-top: 8px;
+  }
+}
+
+/* ---------- SMALL MOBILE (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 14px;
+  }
+  
+  .nav-brand {
+    font-size: 1.3rem;
+  }
+  
+  .nav-menu {
+    width: 85%;
+    max-width: 300px;
+    padding: 80px 16px 30px;
+  }
+  
+  .nav-menu a {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+  }
+  
+  .accordion-header {
+    padding: 10px 6px;
+    font-size: 0.88rem;
+  }
+  
+  .accordion-content a {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .dropdown {
+    margin-left: 8px;
+  }
+}
+
+/* ---------- OVERLAY FOR MOBILE MENU ---------- */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 1040;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+/* ---------- HAMBURGER ANIMATION (when active) ---------- */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ---------- DESKTOP LARGE (1400px+) ---------- */
+@media (min-width: 1400px) {
+  .navbar {
+    max-width: 1400px;
+  }
+  
+  .nav-menu a {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+}
+
+/* ---------- FIX: Dropdown hover on desktop only (no touch interference) ---------- */
+@media (min-width: 993px) {
+  .has-dropdown:hover .dropdown {
+    display: flex;
+  }
+  
+  /* Reset any mobile classes on desktop */
+  .dropdown.mobile-open {
+    display: none !important;
+  }
+}
+
+/* ---------- SCROLLBAR STYLING (optional) ---------- */
+.nav-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.nav-menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+/* ----------- HEADER (FIXED – WHITE) ----------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: #ffffff; /* 🔥 WHITE */
+  border-bottom: 1px solid #e5e5e5;
+
+  padding: 17px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ----------- NAVBAR ----------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ----------- BRAND ----------- */
+.nav-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1e3c72;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ----------- MENU ----------- */
+/* ----------- MENU ----------- */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* 🔥 equal spacing */
+
+    
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #1e3c72; /* 🔥 dark blue */
+  font-weight: 500;
+  padding: 10px 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: block;
+  font-size: 15px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: #f2f6ff;
+  color: #000000; /* black */
+}   
+/* ----------- DROPDOWN ----------- */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  min-width: 340px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  border: 1px solid #e5e5e5;
+}
+
+.has-dropdown:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown a {
+  color: #1e3c72;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.dropdown a:hover {
+  background: #f2f6ff;
+  border-radius: 4px;
+  color: #000;
+}
+
+/* ----------- ACCORDION ----------- */
+.accordion-header {
+  background: none;
+  color: #1e3c72;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 8px 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.accordion-header:hover {
+  background: #f2f6ff;
+  border-radius: 4px;
+}
+
+.accordion-content {
+  display: none;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.accordion-content a {
+  padding: 6px 10px;
+  color: #1e3c72;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.accordion-content a:hover {
+  background: #f2f6ff;
+  border-radius: 4px;
+  color: #000;
+}
+
+/* ----------- HAMBURGER ----------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #1e3c72;
+  border-radius: 2px;
+}
+
+/* ----------- MOBILE ----------- */
+@media (max-width: 992px) {
+  .hamburger { display: flex; }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    flex-direction: column;
+    padding: 20px 20px 40px;
+    background: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu a {
+    padding: 12px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+/* ===============================
+   CTA BUTTON – IMAGE MATCH
+================================ */
+.cta-button {
+  padding: 12px 26px;
+  background: #ffffff;              /* pure white */
+  color: #0f172a;                   /* dark text */
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Hover – very soft lift */
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Active (click) */
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.10);
+}
+
+/* ----------- UK BADGE ----------- */
+.uk-badge {
+  background: linear-gradient(90deg, #cf142b 33%, #ffffff 33%, #ffffff 66%, #00247d 66%);
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+}
+</style>
+
+</head>
+<body>
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-brand">ECS<span>CARD</span></div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="ecs-group-booking.html">Group Book <span class="uk-badge">SAVE</span></a></li>
+
+      <!-- ECS Dropdown -->
+      <li class="has-dropdown">
+        <a href="#">ECS Cards ▾</a>
+        <div class="dropdown">
+          <div class="accordion">
+
+            <!-- 1. Entry Level -->
+            <div class="accordion-item">
+              <button class="accordion-header">Entry Level ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-labourer-card.html">Labourer Card</a>
+                <a href="ecs-electrical-labourer-card.html">Electrical Labourer Card</a>
+                <a href="ecs-apprentice-card.html">Apprentice Card</a>
+                <a href="ecs-trainee-electrician-card.html">Trainee Card</a>
+                <a href="ecs-industry-placement-card-t-level.html">Industry Placement Card (T-Level)</a>
+                <a href="ecs-experienced-worker-card-green-stripe-temporary.html">Experienced Worker (Gold Stripe – Temp)</a>
+                <a href="ecs-provisional-installation-electrician-card.html">Provisional Installation Electrician</a>
+              </div>
+            </div>
+
+            <!-- 2. Skilled -->
+            <div class="accordion-item">
+              <button class="accordion-header">Skilled (Gold Cards & Related) ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-installation-electrician-gold-card.html">Installation Electrician (Gold)</a>
+                <a href="ecs-approved-electrician-gold-card.html">Approved Electrician (Gold)</a>
+                <a href="ecs-registered-electrician-gold-card.html">Registered Electrician (Gold)</a>
+                <a href="ecs-technician-gold-card.html">Technician (Gold)</a>
+                <a href="ecs-maintenance-electrician-gold-card.html">Maintenance Electrician</a>
+                <a href="ecs-electrical-fitter-gold-card.html">Electrical Fitter</a>
+                <a href="ecs-engineering-maintenance-electrician-gold-card.html">Engineering Maintenance Electrician</a>
+                <a href="ecs-wireman-panel-builder-gold-card.html">Wireman / Panel Builder</a>
+                <a href="ecs-marine-electrician-gold-card.html">Marine Electrician</a>
+                <a href="ecs-auto-electrician-card.html">Auto Electrician</a>
+                <a href="ecs-electrical-product-service-engineer-card.html">Electrical Product Service Engineer</a>
+                <a href="ecs-electrical-winder-card.html">Electrical Winder</a>
+                <a href="ecs-distribution-networks-electrician-card.html">Distribution Networks Electrician</a>
+                <a href="ecs-radio-television-electrician-card.html">Radio/Television Electrician</a>
+                <a href="ecs-instruments-mechanic-card.html">Instruments Mechanic</a>
+              </div>
+            </div>
+
+            <!-- 3. Supervisory & Management -->
+            <div class="accordion-item">
+              <button class="accordion-header">Supervisory & Management ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-site-supervisor-card.html">Site Supervisor</a>
+                <a href="ecs-site-manager-card.html">Site Manager</a>
+                <a href="ecs-contracts-manager-card.html">Contracts Manager</a>
+                <a href="ecs-project-manager-card.html">Project Manager</a>
+                <a href="ecs-client-representative-card.html">Client Representative</a>
+                <a href="ecs-site-support-occupations-card.html">Site Support Occupations</a>
+              </div>
+            </div>
+
+            <!-- 4. Professional -->
+            <div class="accordion-item">
+              <button class="accordion-header">Professional & Qualified ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-academically-qualified-person-card.html">Academically Qualified Person (AQP)</a>
+                <a href="ecs-professionally-qualified-person-pqp-card.html">Professionally Qualified Person (PQP)</a>
+                <a href="ecs-visitor-card.html">Visitor Card</a>
+              </div>
+            </div>
+
+            <!-- 5. FESS -->
+            <div class="accordion-item">
+              <button class="accordion-header">FESS (Fire, Emergency & Security) ▾</button>
+              <div class="accordion-content">
+                <a href="fess-apprentice-ecs-card.html">FESS Apprentice</a>
+                <a href="fess-labourer-ecs-card.html">FESS Labourer</a>
+                <a href="fess-systems-operative-ecs-card.html">FESS Systems Operative</a>
+                <a href="fess-systems-technician-engineer-ecs-card.html">FESS Systems Technician / Engineer</a>
+                <a href="building-controls-installer-engineer-ecs-card.html">Building Controls Installer / Engineer</a>
+              </div>
+            </div>
+
+            <!-- 6. Network -->
+            <div class="accordion-item">
+              <button class="accordion-header">Network Infrastructure & Telecoms ▾</button>
+              <div class="accordion-content">
+                <a href="network-infrastructure-assistant-ecs-card.html">Network Infrastructure Assistant</a>
+                <a href="network-infrastructure-installer-ecs-card.html">Network Infrastructure Installer (levels)</a>
+                <a href="lv-jointer-ecs-card.html">LV Jointer</a>
+                <a href="ecs-telecommunications-fitter-card.html">Telecommunications Fitter</a>
+                <a href="ecs-cellular-network-field-engineer-card.html">Cellular Network Field Engineer</a>
+                <a href="ecs-signal-distribution-specialist-card.html">Signal Distribution Specialist</a>
+                <a href="ecs-telecoms-operative-card.html">Telecoms Operative</a>
+              </div>
+            </div>
+
+            <!-- 7. AV -->
+            <div class="accordion-item">
+              <button class="accordion-header">AV, Media & Creative ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-av-operative-av-technician-card.html">AV Operative / AV Technician</a>
+                <a href="ecs-broadcast-media-supervisor-card.html">Broadcast & Media Supervisor</a>
+                <a href="ecs-creative-production-operative-card.html">Creative Production Operative</a>
+                <a href="ecs-creative-production-technician-card.html">Creative Production Technician</a>
+                <a href="ecs-creative-production-manager-card.html">Creative Production Manager</a>
+                <a href="iscve-av-engineer-card.html">ISCVE AV Engineer</a>
+                <a href="iscve-sound-engineer-card.html">ISCVE Sound Engineer</a>
+                <a href="avixa-commercial-av-integrator.html">AVIXA Commercial AV Integrator</a>
+              </div>
+            </div>
+
+            <!-- 8. Other Specialist -->
+            <div class="accordion-item">
+              <button class="accordion-header">Other Specialist ▾</button>
+              <div class="accordion-content">
+                <a href="pat-testing-card.html">Portable Appliance Testing (PAT)</a>
+                <a href="ecs-vehicle-installer-card.html">Vehicle Installer</a>
+                <a href="lecturer-ecs-card.html">Lecturer</a>
+                <a href="work-based-assessor-card.html">Work-based Assessor</a>
+              </div>
+            </div>
+
+            <!-- 9. Partner Scheme -->
+            <div class="accordion-item">
+              <button class="accordion-header">Partner & Professional Schemes ▾</button>
+              <div class="accordion-content">
+                <a href="gate-safe-installer-card.html">Gate Safe Installer</a>
+                <a href="mpba-pre-delivery-inspection-pdi.html">MPBA Pre-Delivery Inspection (PDI)</a>
+                <a href="sll-lighting-professional-card.html">SLL Lighting Professional</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- UK ECS Tests -->
+      <li class="has-dropdown">
+        <a href="ecs-test.html">ECS Tests ▾</a>
+        <div class="dropdown">
+          <div class="accordion">
+
+            <div class="accordion-item">
+              <button class="accordion-header">Health, Safety & Environment Tests ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-health-and-safety-test-only.html">ECS H&S Test Only</a>
+                <a href="ecs-health-safety-environment-assessment.html">Health, Safety & Environment Assessment</a>
+                <a href="ecs-renewal-health-and-safety-test.html">Renewal H&S Test</a>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">Electrical Knowledge Tests ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-installation-electrician-test.html">Installation Electrician Test</a>
+                <a href="approved-electrician-test.html">Approved Electrician Test</a>
+                <a href="ecs-maintenance-electrician-test.html">Maintenance Electrician Test</a>
+                <a href="ecs-technician-test.html">Technician Test</a>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">FESS (Fire & Security) Tests ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-fess-apprentice-test.html">FESS Apprentice Test</a>
+                <a href="fess-systems-operative-ecs-card.html">FESS Systems Operative Test</a>
+                <a href="fess-systems-technician-engineer-test.html">FESS Technician Test</a>
+                <a href="ecs-fess-engineer-test.html">FESS Engineer Test</a>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">Network & Telecoms Tests ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-network-infrastructure-operative-test.html">Network Infrastructure Operative Test</a>
+                <a href="ecs-telecommunications-fitter-test.html">Telecommunications Fitter Test</a>
+                <a href="ecs-cellular-network-field-engineer-test.html">Cellular Network Field Engineer Test</a>
+                <a href="ecs-signal-distribution-specialist-test.html">Signal Distribution Specialist Test</a>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">AV & Media Tests ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-av-technician-test.html">AV Technician Test</a>
+                <a href="ecs-broadcast-media-supervisor-test.html">Broadcast & Media Supervisor Test</a>
+                <a href="creative-industries-production-test.html">Creative Industries Production Test</a>
+                <a href="ecs-sound-engineer-test.html">Sound Engineer Test</a>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">Specialist & Other Tests ▾</button>
+              <div class="accordion-content">
+                <a href="ecs-portable-appliance-testing-pat-test.html">Portable Appliance Testing (PAT) Test</a>
+                <a href="ecs-lecturer-assessor-test.html">Lecturer / Assessor Test</a>
+                <a href="ecs-visitor-supervisor-test.html">Visitor & Supervisor Test</a>
+              </div>
+            </div>
+                <a href="https://applyecscard.co.uk/ecs/">ECS BLOG</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="revision-training-courses.html">Revision Book</a></li>
+      <li><a href="ecs-test-centre.html">ECS Test Centres</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="courses.html" class="cta-button">ECS Courses (A–Z)</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+// -------- HAMBURGER TOGGLE --------
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // -------- CLOSE MOBILE MENU ON RESIZE --------
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992) {
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
+  });
+}
+
+// -------- ACCORDION DROPDOWN (CLICK TO OPEN/CLOSE) --------
+document.querySelectorAll(".accordion-header").forEach((button) => {
+  button.addEventListener("click", () => {
+    const content = button.nextElementSibling;
+    const isOpen = button.classList.contains("active");
+
+    if (isOpen) {
+      button.classList.remove("active");
+      content.style.display = "none";
+    } else {
+      button.classList.add("active");
+      content.style.display = "flex";
+    }
+  });
+});
+</script>
+</body>
+</html>
+    

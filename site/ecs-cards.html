@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ SEO -->
+  <title>All ECS Cards | ECS Card Types & Routes in the UK</title>
+  <meta name="description"
+        content="Browse all ECS card types in one place. Compare ECS cards for electricians, FESS, network, AV, telecoms and supervisors, then apply for your card and book your ECS test online." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://applyecscard.co.uk/ecs-cards" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="All ECS Cards | ECS Card Types & Routes in the UK" />
+  <meta property="og:description"
+        content="See every ECS card route in one place. Check which ECS card fits your role and start your card application and ECS test booking online." />
+  <meta property="og:url" content="https://applyecscard.co.uk/ecs-cards" />
+  <meta property="og:site_name" content="Apply ECS" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="All ECS Cards | ECS Card Types & Routes in the UK" />
+  <meta name="twitter:description"
+        content="Explore all ECS card options and choose the right ECS route for your role in the UK." />
+
+  <!-- Styles -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Simple WebPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "All ECS Cards",
+    "url": "https://applyecscard.co.uk/ecs-cards",
+    "description": "Overview of ECS card types available in the UK, including electrical, FESS, network, telecoms, AV and supervisory routes."
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Header load -->
+  <div id="header-container"></div>
+  <script src="header.js"></script>
+<style>
+    /* ===========================
+   index2.css – All ECS Cards
+   =========================== */
+
+/* -------- ROOT + RESET -------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0a2540;
+  --primary-light: #1e3c72;
+  --secondary: #1a73e8;
+  --accent: #00b894;
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+  --border-soft: #e5e7eb;
+  --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --transition: 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(circle at top left, #eef4ff 0, #f9fafb 38%, #f5f7fb 100%);
+  line-height: 1.6;
+}
+
+/* Make sure content not hidden behind sticky header */
+main {
+  padding: 1rem 1.5rem 3rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 2rem 4vw 4rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* -------- HERO / INTRO -------- */
+
+.hero {
+  max-width: 1120px;
+  margin: 1rem auto 2rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #1e3a8a 0, #0f172a 55%);
+  color: #e5ecff;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.2) 0, transparent 55%),
+    radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.28) 0, transparent 60%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-bottom: 0.75rem;
+  max-width: 52rem;
+}
+
+.hero ul {
+  list-style: none;
+  margin-bottom: 0.75rem;
+}
+
+.hero li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.08rem;
+  font-size: 0.9rem;
+  color: #bbf7d0;
+}
+
+.hero strong {
+  color: #e0f2fe;
+}
+
+/* -------- ECS CARDS GRID -------- */
+
+.ecs-cards-container {
+  max-width: 1240px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Each card */
+.ecs-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition), translate var(--transition);
+  position: relative;
+}
+
+/* Tag-style faint gradient edge on left */
+.ecs-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), transparent);
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.ecs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.14);
+}
+
+.ecs-card:hover::before {
+  opacity: 1;
+}
+
+/* Card image */
+.ecs-card img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+}
+
+/* Card text content */
+.ecs-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.9rem 1rem 0.2rem;
+  color: var(--primary);
+}
+
+.ecs-card p {
+  font-size: 0.9rem;
+  padding: 0 1rem 0.5rem;
+  color: var(--text-muted);
+  min-height: 3.2rem;
+}
+
+/* Buttons wrapper */
+.ecs-card-buttons {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem 1rem;
+  margin-top: auto;
+}
+
+/* Base button style */
+.ecs-card-buttons a {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  padding: 0.55rem 0.75rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: background var(--transition), color var(--transition),
+    border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+/* Primary = View Card & Apply */
+.btn-card {
+  background: linear-gradient(135deg, var(--secondary), #2563eb);
+  color: #f9fafb;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+}
+
+.btn-card:hover {
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.42);
+  transform: translateY(-1px);
+}
+
+/* Secondary = Book Test */
+.btn-test {
+  background: #f9fafb;
+  color: var(--secondary);
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
+.btn-test:hover {
+  background: #eef2ff;
+  border-color: var(--secondary);
+  box-shadow: 0 8px 18px rgba(148, 163, 184, 0.45);
+  transform: translateY(-1px);
+}
+
+/* -------- FEATURES / NOTE SECTION -------- */
+
+.features {
+  max-width: 1120px;
+  margin: 0 auto 3rem;
+  background: rgba(15, 23, 42, 0.03);
+  border-radius: 18px;
+  padding: 1.4rem 1.3rem;
+  border: 1px dashed rgba(148, 163, 184, 0.8);
+}
+
+.features .feature strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.features .muted {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* -------- RESPONSIVE TWEAKS -------- */
+
+@media (min-width: 640px) {
+  .hero {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 2.2rem 2rem;
+  }
+
+  .ecs-cards-container {
+    gap: 1.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero p,
+  .hero ul {
+    font-size: 0.98rem;
+  }
+
+  .ecs-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Small screen fixes */
+@media (max-width: 480px) {
+  .ecs-card img {
+    height: 150px;
+  }
+
+  .ecs-card-buttons {
+    flex-direction: column;
+  }
+}
+
+</style>
+  <main>
+    <!-- HERO / INTRO -->
+    <section class="hero hero-secondary">
+      <div class="hero-content">
+        <h1>All ECS Cards in One Place</h1>
+        <p>
+          Use this page to quickly scan through <strong>ECS card types</strong> for UK
+          electrotechnical work. From entry-level labourer cards to gold electrician,
+          FESS, network, AV and supervisory grades, you can:
+        </p>
+        <ul>
+          <li>Check which <strong>ECS card</strong> matches your job role.</li>
+          <li>Open the card information and start an <strong>ECS card application</strong>.</li>
+          <li><strong>Book ECS test</strong> directly from the same card tile.</li>
+        </ul>
+        <p>
+          Each tile below has two buttons – one for the card route and one to book your UK
+          <strong>ECS Health, Safety &amp; Environment test</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ALL ECS CARDS GRID -->
+    <section class="ecs-cards-container ecs-cards-page">
+      <!-- ENTRY LEVEL -->
+      <div class="ecs-card">
+        <img src="img/Labourer.jpg" alt="Labourer ECS Card" />
+        <h3>Labourer</h3>
+        <p>Entry-level ECS card for general site support and basic duties.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-labourer-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/Electrical Labourer Card (ECS).jpeg" alt="Electrical Labourer ECS Card" />
+        <h3>Electrical Labourer</h3>
+        <p>For workers assisting qualified electricians on electrical sites.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-electrical-labourer-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Apprentice Card.jpeg" alt="Apprentice ECS Card" />
+        <h3>Apprentice</h3>
+        <p>ECS card route for recognised electrical apprentices in training.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-apprentice-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Trainee Electrician Card.jpeg" alt="Trainee Electrician ECS Card" />
+        <h3>Trainee Electrician</h3>
+        <p>For trainees working towards full electrician or related qualifications.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-trainee-electrician-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Industry Placement Card (T-Level).jpeg"
+             alt="Industry Placement ECS Card (T-Level)" />
+        <h3>Industry Placement (T-Level)</h3>
+        <p>For T-Level students completing supervised industry placements.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-industry-placement-card-t-level.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Experienced Worker Card.jpeg"
+             alt="Experienced Worker ECS Card Gold Stripe Temporary" />
+        <h3>Experienced Worker (Gold Stripe – Temp)</h3>
+        <p>Temporary route for experienced workers progressing to a full card.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-experienced-worker-card-green-stripe-temporary.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Provisional Installation Electrician Card.jpeg"
+             alt="Provisional Installation Electrician Card" />
+        <h3>Provisional Installation Electrician</h3>
+        <p>Provisional card while final evidence for full installation route is completed.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-provisional-installation-electrician-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <!-- SKILLED / GOLD ELECTRICAL -->
+      <div class="ecs-card">
+        <img src="img/ECS Installation Electrician Card (Gold).jpeg"
+             alt="Installation Electrician Gold ECS Card" />
+        <h3>Installation Electrician (Gold)</h3>
+        <p>Skilled worker gold card for qualified installation electricians.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-installation-electrician-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Approved Electrician Card (Gold)(1).jpeg"
+             alt="Approved Electrician Gold ECS Card" />
+        <h3>Approved Electrician (Gold)</h3>
+        <p>Gold card for electricians who have been assessed to approved level.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-approved-electrician-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Registered Electrician Card (Gold).jpeg"
+             alt="Registered Electrician Gold ECS Card" />
+        <h3>Registered Electrician (Gold)</h3>
+        <p>Gold card with Registered Electrician status and current standards.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-registered-electrician-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Technician Card (Gold).jpeg" alt="Technician Gold ECS Card" />
+        <h3>Technician (Gold)</h3>
+        <p>Advanced technical level for experienced technicians and specialists.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-technician-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Maintenance Electrician Card (Gold).jpeg"
+             alt="Maintenance Electrician Gold ECS Card" />
+        <h3>Maintenance Electrician</h3>
+        <p>Gold card for electricians focused on planned and reactive maintenance.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-maintenance-electrician-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Electrical Fitter Card (Gold).jpeg"
+             alt="Electrical Fitter Gold ECS Card" />
+        <h3>Electrical Fitter</h3>
+        <p>Gold card route for electrical fitting and panel-based installation work.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-electrical-fitter-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ecs-engineering-maintenance-electrician-gold-card-social.jpg"
+             alt="Engineering Maintenance Electrician Gold ECS Card" />
+        <h3>Engineering Maintenance Electrician</h3>
+        <p>Gold card for engineering-focused electrical maintenance roles.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-engineering-maintenance-electrician-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Wireman & Panel Builder Card (Gold).jpeg"
+             alt="Wireman & Panel Builder Gold ECS Card" />
+        <h3>Wireman &amp; Panel Builder</h3>
+        <p>For workers assembling, wiring and testing electrical panels.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-wireman-panel-builder-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Marine Electrician Card (Gold).jpeg"
+             alt="Marine Electrician Gold ECS Card" />
+        <h3>Marine Electrician</h3>
+        <p>Gold card route for electrical work on ships and marine installations.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-marine-electrician-gold-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Auto Electrician Card.jpeg" alt="Auto Electrician ECS Card" />
+        <h3>Auto Electrician</h3>
+        <p>ECS card for automotive electrical and diagnostic work.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-auto-electrician-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Electrical Product Service Engineer Card.jpg"
+             alt="Electrical Product Service Engineer ECS Card" />
+        <h3>Electrical Product Service Engineer</h3>
+        <p>Service and repair specialist for electrical equipment and products.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-electrical-product-service-engineer-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Electrical Winder Card.jpeg" alt="Electrical Winder ECS Card" />
+        <h3>Electrical Winder</h3>
+        <p>Specialist winding and refurbishment of motors and electrical machines.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-electrical-winder-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ecs-distribution-networks-electrician-card-social.jpg"
+             alt="Distribution Networks Electrician ECS Card" />
+        <h3>Distribution Networks Electrician</h3>
+        <p>Network-focused electrician working on distribution systems.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-distribution-networks-electrician-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Radio & Television Electrician Card.jpeg"
+             alt="Radio and Television Electrician ECS Card" />
+        <h3>Radio &amp; Television Electrician</h3>
+        <p>Electrical and signal work for broadcast and media environments.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-radio-television-electrician-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Instruments Mechanic Card.jpeg" alt="Instruments Mechanic ECS Card" />
+        <h3>Instruments Mechanic</h3>
+        <p>Specialist roles working with instrumentation and controls.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-instruments-mechanic-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <!-- SUPERVISORY & MANAGEMENT -->
+      <div class="ecs-card">
+        <img src="img/ECS Site Supervisor Card.jpeg" alt="Site Supervisor ECS Card" />
+        <h3>Site Supervisor</h3>
+        <p>Supervisory level ECS card for overseeing electrotechnical work.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-site-supervisor-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Site Manager Card.jpeg" alt="Site Manager ECS Card" />
+        <h3>Site Manager</h3>
+        <p>Site management card for leading projects and delivery on site.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-site-manager-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS-Contracts-Manager-Card-social.jpg" alt="Contracts Manager ECS Card" />
+        <h3>Contracts Manager</h3>
+        <p>Senior card route for managing contracts and commercial delivery.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-contracts-manager-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS-Project-Manager-Card-social.jpg" alt="Project Manager ECS Card" />
+        <h3>Project Manager</h3>
+        <p>Management-level ECS route for project planning and coordination.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-project-manager-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Site Support Occupations Card.jpeg"
+             alt="Site Support Occupations ECS Card" />
+        <h3>Site Support Occupations</h3>
+        <p>For non-electrical roles that still need ECS recognition on site.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-site-support-occupations-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL & QUALIFIED -->
+      <div class="ecs-card">
+        <img src="img/ECS Academically Qualified Person (AQP) Card.jpeg"
+             alt="Academically Qualified Person ECS Card" />
+        <h3>Academically Qualified Person (AQP)</h3>
+        <p>For holders of suitable academic qualifications in a related discipline.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-academically-qualified-person-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Professionally Qualified Person (PQP) Card.jpeg"
+             alt="Professionally Qualified Person ECS Card" />
+        <h3>Professionally Qualified Person (PQP)</h3>
+        <p>For members of approved professional institutions and bodies.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-professionally-qualified-person-pqp-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <!-- FESS -->
+      <div class="ecs-card">
+        <img src="img/FESS Apprentice ECS Card.jpeg" alt="FESS Apprentice ECS Card" />
+        <h3>FESS Apprentice</h3>
+        <p>For apprentices in Fire, Emergency &amp; Security Systems roles.</p>
+        <div class="ecs-card-buttons">
+          <a href="fess-apprentice-ecs-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/FESS Labourer ECS Card.jpeg" alt="FESS Labourer ECS Card" />
+        <h3>FESS Labourer</h3>
+        <p>Entry-level labourer card within the FESS occupational structure.</p>
+        <div class="ecs-card-buttons">
+          <a href="fess-labourer-ecs-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/FESS Systems Operative ECS Card.jpeg"
+             alt="FESS Systems Operative ECS Card" />
+        <h3>FESS Systems Operative</h3>
+        <p>Technical operative card for FESS installation and service.</p>
+        <div class="ecs-card-buttons">
+          <a href="fess-systems-operative-ecs-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/FESS Systems Technician & Engineer ECS Card.jpeg"
+             alt="FESS Systems Technician and Engineer ECS Card" />
+        <h3>FESS Systems Technician / Engineer</h3>
+        <p>Higher level FESS card for technicians and engineers.</p>
+        <div class="ecs-card-buttons">
+          <a href="fess-systems-technician-engineer-ecs-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/Building Controls Installer & Engineer.jpg"
+             alt="Building Controls Installer and Engineer ECS Card" />
+        <h3>Building Controls Installer / Engineer</h3>
+        <p>For building controls and automation system specialists.</p>
+        <div class="ecs-card-buttons">
+          <a href="building-controls-installer-engineer-ecs-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <!-- NETWORK & TELECOMS -->
+      <div class="ecs-card">
+        <img src="img/Network Infrastructure Assistant ECS Card.jpeg"
+             alt="Network Infrastructure Assistant ECS Card" />
+        <h3>Network Infrastructure Assistant</h3>
+        <p>Assistant-level card for network and structured cabling work.</p>
+        <div class="ecs-card-buttons">
+          <a href="network-infrastructure-assistant-ecs-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/Network Infrastructure Installer ECS Card.jpeg"
+             alt="Network Infrastructure Installer ECS Card" />
+        <h3>Network Infrastructure Installer (Levels)</h3>
+        <p>Installer and technician levels for network infrastructure routes.</p>
+        <div class="ecs-card-buttons">
+          <a href="network-infrastructure-installer-ecs-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/LV Jointer ECS Card.jpeg" alt="LV Jointer ECS Card" />
+        <h3>LV Jointer</h3>
+        <p>Low voltage jointer working on LV distribution networks.</p>
+        <div class="ecs-card-buttons">
+          <a href="lv-jointer-ecs-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Telecommunications Fitter Card.jpeg"
+             alt="Telecommunications Fitter ECS Card" />
+        <h3>Telecommunications Fitter</h3>
+        <p>Telecoms installer and maintenance roles.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-telecommunications-fitter-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Cellular Network Field Engineer Card.jpeg"
+             alt="Cellular Network Field Engineer ECS Card" />
+        <h3>Cellular Network Field Engineer</h3>
+        <p>Field engineer working on mobile and cellular networks.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-cellular-network-field-engineer-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/Signal Distribution Specialist ecs.jpeg"
+             alt="Signal Distribution Specialist ECS Card" />
+        <h3>Signal Distribution Specialist</h3>
+        <p>Specialist in distribution of broadcast and signal systems.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-signal-distribution-specialist-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Telecoms Operative Card.jpeg" alt="Telecoms Operative ECS Card" />
+        <h3>Telecoms Operative</h3>
+        <p>Operative-level ECS card for telecoms field work.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-telecoms-operative-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <!-- AV, MEDIA & CREATIVE -->
+      <div class="ecs-card">
+        <img src="img/ecs-av-operative-av-technician-card-social.jpg"
+             alt="AV Operative / AV Technician ECS Card" />
+        <h3>AV Operative / AV Technician</h3>
+        <p>Audio visual technician and operative roles in venues and events.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-av-operative-av-technician-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Broadcast & Media Supervisor Card.jpeg"
+             alt="Broadcast & Media Supervisor ECS Card" />
+        <h3>Broadcast &amp; Media Supervisor</h3>
+        <p>Supervisory card for broadcast and media technical operations.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-broadcast-media-supervisor-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Creative Production Operative Card.jpeg"
+             alt="Creative Production Operative ECS Card" />
+        <h3>Creative Production Operative</h3>
+        <p>Supporting production work in stage, theatre and events.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-creative-production-operative-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ECS Creative Production Technician Card.jpeg"
+             alt="Creative Production Technician ECS Card" />
+        <h3>Creative Production Technician</h3>
+        <p>Technical roles supporting creative and live event production.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-creative-production-technician-card.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ecs-creative-production-manager-card-social.jpg"
+             alt="Creative Production Manager ECS Card" />
+        <h3>Creative Production Manager</h3>
+        <p>Management-level card for leading creative and live event teams.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-creative-production-manager-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ISCVE AV Engineer Card.jpeg" alt="ISCVE AV Engineer ECS Card" />
+        <h3>ISCVE AV Engineer</h3>
+        <p>AV engineer roles recognised through ISCVE membership.</p>
+        <div class="ecs-card-buttons">
+          <a href="iscve-av-engineer-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/ISCVE Sound Engineer Card.jpeg" alt="ISCVE Sound Engineer ECS Card" />
+        <h3>ISCVE Sound Engineer</h3>
+        <p>Sound engineer working with permanent and installed sound systems.</p>
+        <div class="ecs-card-buttons">
+          <a href="iscve-sound-engineer-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/AVIXA Commercial AV Integrator Card.jpeg"
+             alt="AVIXA Commercial AV Integrator ECS Card" />
+        <h3>AVIXA Commercial AV Integrator</h3>
+        <p>AV integration specialist roles recognised via AVIXA pathways.</p>
+        <div class="ecs-card-buttons">
+          <a href="avixa-commercial-av-integrator.html" class="btn-card">
+            View Card &amp; Apply
+          </a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <!-- SPECIALIST & PARTNER -->
+      <div class="ecs-card">
+        <img src="img/Vehicle Installer Card.jpeg" alt="Vehicle Installer ECS Card" />
+        <h3>Vehicle Installer</h3>
+        <p>For workers installing electrical and electronic systems in vehicles.</p>
+        <div class="ecs-card-buttons">
+          <a href="ecs-vehicle-installer-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/Gate Safe Installer Card.jpeg" alt="Gate Safe Installer ECS Card" />
+        <h3>Gate Safe Installer</h3>
+        <p>Automatic gate and barrier installation specialists.</p>
+        <div class="ecs-card-buttons">
+          <a href="gate-safe-installer-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+
+      <div class="ecs-card">
+        <img src="img/SLL Lighting Professional Card.jpeg" alt="SLL Lighting Professional ECS Card" />
+        <h3>SLL Lighting Professional</h3>
+        <p>Lighting design and consultancy professionals recognised by SLL.</p>
+        <div class="ecs-card-buttons">
+          <a href="sll-lighting-professional-card.html" class="btn-card">View Card &amp; Apply</a>
+          <a href="book.html" class="btn-test">Book ECS Test</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SMALL NOTE -->
+    <section class="features narrow">
+      <div class="feature">
+        <strong>Need help choosing the right ECS card?</strong>
+        <p class="muted">
+          If you are not sure which card fits your job title, experience or qualifications,
+          you can use this page as a starting point and then speak to your employer, training
+          provider or ECS directly for confirmation.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

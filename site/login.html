@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>ECSAPPLY</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<body>
+<div id="header-container"></div>
+<script src="header.js"></script>
+<section>
+  <div class="wrapper">
+    <div class="border-slide"></div>
+    <div class="inner-wrapper">
+      <div class="toggle-buttons">
+        <button id="loginBtn" class="active" onclick="toggleForm('login')">Login</button>
+        <button id="registerBtn" onclick="toggleForm('register')">Register</button>
+      </div>
+
+      <div id="loginForm" class="form active">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button>Login</button>
+        <p><a href="#">Forgot password?</a></p>
+      </div>
+
+      <div id="registerForm" class="form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Create Password" required />
+        <button>Register</button>
+        <p>Already have an account? <a onclick="toggleForm('login')">Login</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<script>
+// -------- HAMBURGER TOGGLE --------
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active'); // CSS me .nav-menu.active use
+});
+
+// -------- ACCORDION DROPDOWN --------
+document.querySelectorAll(".accordion-header").forEach(button => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+    const content = button.nextElementSibling;
+
+    // Mobile vs Desktop display handling
+    if (content.style.display === "flex" || content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      const isMobile = window.innerWidth <= 992; // breakpoint match CSS
+      content.style.display = isMobile ? "block" : "flex";
+    }
+  });
+});
+
+// -------- CLOSE ACCORDION ON WINDOW RESIZE --------
+window.addEventListener('resize', () => {
+  document.querySelectorAll(".accordion-content").forEach(content => {
+    content.style.display = "none";
+  });
+  document.querySelectorAll(".accordion-header").forEach(button => {
+    button.classList.remove("active");
+  });
+
+  // Close mobile menu if resizing
+  if (window.innerWidth > 992) {
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+  }
+});
+</script>
+<script>
+function toggleForm(formType) {
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
+  const loginBtn = document.getElementById("loginBtn");
+  const registerBtn = document.getElementById("registerBtn");
+
+  if (formType === "login") {
+    loginForm.classList.add("active");
+    registerForm.classList.remove("active");
+    loginBtn.classList.add("active");
+    registerBtn.classList.remove("active");
+  } else {
+    registerForm.classList.add("active");
+    loginForm.classList.remove("active");
+    registerBtn.classList.add("active");
+    loginBtn.classList.remove("active");
+  }
+}
+</script>
+
+</html>

@@ -1,0 +1,252 @@
+/* ----------- RESET ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ----------- HEADER ----------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgb(8, 41, 76);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  animation: slideDown 0.6s ease;
+  padding: 12px 20px;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ----------- NAVBAR ----------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand */
+.nav-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #fbfcfc, #6bdab5, #4959d4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowMove 3s linear infinite;
+  transition: transform 0.2s ease;
+}
+
+@keyframes glowMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.nav-brand:hover {
+  transform: scale(1.05);
+}
+
+/* ----------- MENU ----------- */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 0px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fdfdfd;
+  font-weight: 1500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: #1a3b5d;
+  color: #69b3ff;
+}
+
+/* ----------- DROPDOWN ----------- */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 15px;
+  min-width: 340px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.has-dropdown:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------- ACCORDION ----------- */
+.accordion-header {
+  background: none;
+  color: #69b3ff;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 8px 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.accordion-header.active,
+.accordion-header:hover {
+  background: #1a3b5d;
+  border-radius: 4px;
+}
+
+.accordion-content {
+  display: none;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.accordion-content a {
+  padding: 6px 10px;
+  color: #cce7ff;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.accordion-header.active + .accordion-content {
+  display: flex;
+}
+
+/* ----------- HAMBURGER ----------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #00bfff;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ----------- MOBILE ----------- */
+@media (max-width: 992px) {
+  /* Show hamburger on mobile */
+  .hamburger { display: flex; }
+
+  /* Mobile nav menu */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    flex-direction: column;
+    padding: 100px 20px 40px;
+    gap: 10px;
+    background: rgba(0,0,0,0.95);
+    transition: left 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;   /* enable scroll */
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    left: 0;
+  }
+
+  /* Mobile menu items */
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Mobile dropdown inside menu */
+  .dropdown {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+/* ----------- BUTTON STYLE ----------- */
+.a {
+  padding: 10px 22px;
+  background-color: #007BFF;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+.a:hover {
+  background: linear-gradient(45deg, #1e90ff, #00bfff);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,191,255,0.4);
+}
+/* Dropdown ke andar links ko ek line me dikhana */
+.dropdown a {
+  display: block;          /* ek ek line me */
+  padding: 8px 12px;       /* thoda spacing */
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  white-space: normal;     /* text wrap allow */
+  transition: background 0.2s;
+}
+
+/* Hover effect */
+.dropdown a:hover {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}

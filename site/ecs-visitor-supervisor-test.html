@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ SEO Core -->
+    <title>ECS Visitor & Supervisor Test UK | Book Site Health & Safety Assessment</title>
+
+    <!-- ✅ Meta Description (≈155 chars, main keyword first) -->
+    <meta name="description" content="Book your ECS-style Visitor & Supervisor Test in the UK. Simple help to arrange a site safety assessment for construction visitors, supervisors and managers.">
+
+    <!-- ✅ Target + LSI Keywords -->
+    <meta name="keywords" content="ECS Visitor & Supervisor Test, visitor and supervisor test UK, ECS health and safety test, construction site visitor test, site supervisor safety assessment, ECS test booking UK, visitor supervisor HS&E test, UK construction site access test, Apply ECS Card, applyecscard.co.uk">
+
+    <!-- ✅ Indexing & Canonical -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://applyecscard.co.uk/ecs-visitor-supervisor-test">
+
+    <!-- ✅ Open Graph (Social Sharing) -->
+    <meta property="og:title" content="ECS Visitor & Supervisor Test UK | Book Site Health & Safety Assessment">
+    <meta property="og:description" content="Arrange your Visitor & Supervisor Test for UK construction sites. UK-based support to book a suitable safety assessment date and centre.">
+    <meta property="og:url" content="https://applyecscard.co.uk/ecs-visitor-supervisor-test">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Apply ECS Card">
+    <!-- Change image path if needed -->
+    <meta property="og:image" content="https://applyecscard.co.uk/img/test/Visitor & Supervisor Test.jpg">
+
+    <!-- ✅ Favicon (optional – set according to your site setup) -->
+    <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
+
+    <!-- ✅ Styles & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* ----------- RESET & GLOBAL STYLES ----------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a2540;
+            --secondary: #0066cc;
+            --accent: #1a73e8;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+        }
+
+        .professional-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ----------- CARD WRAPPER STYLES ----------- */
+        .card-wrapper {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-top: 20px;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--primary), #1a3b5d);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #0066cc, #1a73e8, #00bfff);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .page-subtitle {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 30px;
+        }
+
+        /* ----------- UK PROFESSIONAL BADGES ----------- */
+        .uk-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            min-width: 150px;
+        }
+
+        .badge:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .badge-text {
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        /* ----------- CARD DISPLAY STYLES ----------- */
+        .card-display {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .ecs-image-container {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .ecs-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .ecs-image:hover {
+            transform: scale(1.03);
+        }
+
+        .image-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--gray);
+        }
+
+        .card-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border-left: 3px solid var(--secondary);
+        }
+
+        .info-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-text strong {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-text span {
+            color: var(--gray);
+        }
+
+        /* ----------- VISITOR FOCUS SECTION ----------- */
+        .visitor-focus {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .visitor-focus h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .focus-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .focus-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* ----------- TEST FORMAT SECTION ----------- */
+        .test-format {
+            background: var(--light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .test-format h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .format-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .format-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .format-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* ----------- PRICE & APPLY SECTION ----------- */
+        .price-section {
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 30px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .apply-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        .process-time {
+            margin-top: 15px;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* ----------- DETAILS GRID ----------- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .detail-section {
+            margin-bottom: 30px;
+        }
+
+        .detail-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            position: relative;
+        }
+
+        .detail-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .requirements-list, .documents-list {
+            list-style: none;
+        }
+
+        .requirements-list li, .documents-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .requirements-list li:hover, .documents-list li:hover {
+            background: var(--light);
+        }
+
+        .list-icon {
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        /* ----------- BENEFITS GRID ----------- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--secondary);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 2.4rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .benefit-item p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ----------- FAQ SECTION ----------- */
+        .faq-section {
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .faq-question {
+            background: var(--light);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: #e2e6ea;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: white;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* ----------- RESPONSIVE STYLES ----------- */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .card-display {
+                flex-direction: column;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-section {
+                padding: 30px 20px;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .price {
+                font-size: 1.6rem;
+            }
+
+            .apply-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .format-grid, .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .professional-container {
+                padding: 10px;
+            }
+
+            .header-section {
+                padding: 25px 15px;
+            }
+
+            .page-title {
+                font-size: 1.6rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .content-section {
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .info-item {
+                padding: 12px;
+            }
+
+            .info-icon {
+                font-size: 1.3rem;
+            }
+
+            .price-section {
+                padding: 15px;
+            }
+
+            .price {
+                font-size: 1.4rem;
+            }
+
+            .apply-btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+
+            .requirements-list li, .documents-list li {
+                padding: 8px;
+            }
+
+            .benefit-item {
+                padding: 12px;
+            }
+
+            .benefit-icon {
+                font-size: 1.9rem;
+            }
+
+            .faq-question {
+                padding: 14px;
+                font-size: 0.95rem;
+            }
+
+            .faq-answer.active {
+                padding: 14px;
+            }
+
+            .test-format, .visitor-focus {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ✅ Global Header (matches rest of site) -->
+    <div id="header-container"></div>
+    <script src="header.js"></script>
+
+    <div class="professional-container">
+        <div class="card-wrapper">
+            <div class="header-section">
+                <h1 class="page-title">ECS Visitor & Supervisor Test</h1>
+                <p class="page-subtitle">
+                    Site health and safety assessment for clients, visitors, supervisors and managers who need safe access to UK construction projects.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <!-- UK Professional Badges -->
+                <div class="uk-badges">
+                    <div class="badge">
+                        <i class="fas fa-hard-hat badge-icon"></i>
+                        <span class="badge-text">Construction Safety</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-user-tie badge-icon"></i>
+                        <span class="badge-text">Supervisory Access</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-check-circle badge-icon"></i>
+                        <span class="badge-text">UK Compliance</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-award badge-icon"></i>
+                        <span class="badge-text">Recognised Standard</span>
+                    </div>
+                </div>
+
+                <div class="card-display">
+                    <div class="ecs-image-container">
+                        <!-- 🔁 Update image path/name as per your assets -->
+                        <img src="img/test/Visitor & Supervisor Test.jpg"
+                             alt="ECS Visitor and Supervisor Test for UK construction site access"
+                             class="ecs-image">
+                        <p class="image-caption">
+                            Visitor & Supervisor Test – health and safety assessment for UK construction sites.
+                        </p>
+                    </div>
+                    
+                    <div class="card-info">
+                        <h2 class="section-title">What is the Visitor & Supervisor Test?</h2>
+                        <p>
+                            The ECS-style Visitor & Supervisor Test is aimed at people who regularly visit or oversee
+                            UK construction sites but are not carrying out hands-on trade work. It confirms that you
+                            understand the key health, safety and environmental rules before stepping onto a live site.
+                        </p>
+                        <p style="margin-top: 10px;">
+                            Clients, project managers, consultants, inspectors and senior staff are often required to
+                            hold a relevant safety test before they are allowed access to construction areas. This test
+                            helps you meet those requirements and demonstrate that you can move around site safely and
+                            follow UK construction standards.
+                        </p>
+                        
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-clock info-icon"></i>
+                                <div class="info-text">
+                                    <strong>Test Duration</strong>
+                                    <span>Normally 45–60 minutes</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clipboard-check info-icon"></i>
+                                <div class="info-text">
+                                    <strong>Assessment Format</strong>
+                                    <span>Computer-based, multiple-choice questions</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt info-icon"></i>
+                                <div class="info-text">
+                                    <strong>Where You Can Take It</strong>
+                                    <span>Approved UK test centres (with selected online options)</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-certificate info-icon"></i>
+                                <div class="info-text">
+                                    <strong>Use of Result</strong>
+                                    <span>Evidence for ECS card and site access checks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visitor Focus Section -->
+                <div class="visitor-focus">
+                    <h3><i class="fas fa-hard-hat"></i> Key Safety Topics Covered</h3>
+                    <p style="margin-bottom: 15px;">
+                        The Visitor & Supervisor Test does not assess trade skills. Instead, it focuses on the core safety topics that anyone
+                        entering a construction site must understand, especially in a supervisory or client-facing role.
+                    </p>
+                    <div class="focus-grid">
+                        <div class="focus-item">
+                            <i class="fas fa-exclamation-triangle focus-icon"></i>
+                            <span>Recognising common site hazards and unsafe conditions</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="fas fa-helmet-safety focus-icon"></i>
+                            <span>Using the correct PPE for visits and inspections</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="fas fa-map-signs focus-icon"></i>
+                            <span>Following access routes, signage and site rules</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="fas fa-users focus-icon"></i>
+                            <span>Understanding the responsibilities of supervisors and visitors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Format Section -->
+                <div class="test-format">
+                    <h3>How the Visitor & Supervisor Test is Structured</h3>
+                    <p style="margin-bottom: 15px;">
+                        Questions are based on real construction scenarios. The aim is to check that you can recognise risk and
+                        make safe decisions while visiting or supervising work on site.
+                    </p>
+                    <div class="format-grid">
+                        <div class="format-item">
+                            <h4>Site Safety Rules</h4>
+                            <p>
+                                Understanding induction procedures, restricted areas, safe walkways, traffic routes and working
+                                around plant and machinery.
+                            </p>
+                        </div>
+                        <div class="format-item">
+                            <h4>Health & Environmental Awareness</h4>
+                            <p>
+                                Awareness of noise, dust, manual handling, welfare provision, environmental controls and
+                                the impact of poor practice on people and the environment.
+                            </p>
+                        </div>
+                        <div class="format-item">
+                            <h4>Emergency & Incident Response</h4>
+                            <p>
+                                What to do in the event of a fire, accident or near miss, including raising the alarm,
+                                assembly points and reporting procedures.
+                            </p>
+                        </div>
+                        <div class="format-item">
+                            <h4>Supervisory Perspective</h4>
+                            <p>
+                                How supervisors, managers and professional visitors can support safe behaviour, challenge
+                                unsafe work and lead by example on site.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price + Booking -->
+                <div class="price-section">
+                    <div class="price">Price: £59 + VAT</div>
+                    <p style="margin-top: 10px; color: var(--gray);">
+                        Includes booking support, test arrangement and guidance on what to bring on the day.
+                    </p>
+                </div>
+
+                <div class="apply-section">
+                    <a href="book.html" class="apply-btn">
+                        <i class="fas fa-calendar-check"></i> Book Visitor & Supervisor Test
+                    </a>
+                    <p class="process-time">
+                        We aim to secure a suitable test date within 2–4 weeks of your booking, subject to centre availability.
+                    </p>
+                </div>
+
+                <!-- Details Grid -->
+                <div class="details-grid">
+                    <div class="left-column">
+                        <div class="detail-section">
+                            <h2>Who the Test is For</h2>
+                            <ul class="requirements-list">
+                                <li>
+                                    <i class="fas fa-check-circle list-icon"></i>
+                                    <span>Clients, project managers, supervisors and professional visitors to UK construction sites.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle list-icon"></i>
+                                    <span>Those who need regular site access but are not carrying out hands-on trade work.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle list-icon"></i>
+                                    <span>People who must show evidence of safety awareness to employers, principal contractors or clients.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle list-icon"></i>
+                                    <span>No previous ECS card is required, but basic familiarity with construction activity is helpful.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h2>What You Need for the Test</h2>
+                            <ul class="documents-list">
+                                <li>
+                                    <i class="fas fa-id-card list-icon"></i>
+                                    <span>Valid photographic ID such as a passport or UK driving licence.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope-open list-icon"></i>
+                                    <span>Your booking confirmation email or reference number issued after payment.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-clock list-icon"></i>
+                                    <span>Arrival at the test centre at least 15 minutes before the scheduled start time.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-ban list-icon"></i>
+                                    <span>Mobile phones and notes must be switched off and stored as per test centre rules.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="right-column">
+                        <div class="detail-section">
+                            <h2>Main Benefits of Passing</h2>
+                            <div class="benefits-grid">
+                                <div class="benefit-item">
+                                    <i class="fas fa-shield-alt benefit-icon"></i>
+                                    <h3>Proves Safety Awareness</h3>
+                                    <p>Shows that you understand the basic rules needed to move safely around live construction sites.</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-id-card-alt benefit-icon"></i>
+                                    <h3>Supports Card Applications</h3>
+                                    <p>Often required as part of ECS or other site access card applications for visitors and supervisors.</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-industry benefit-icon"></i>
+                                    <h3>Recognised by UK Contractors</h3>
+                                    <p>Helps demonstrate compliance when working with principal contractors and major UK construction firms.</p>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-user-check benefit-icon"></i>
+                                    <h3>Professional Credibility</h3>
+                                    <p>Reassures clients and colleagues that you take site safety, supervision and compliance seriously.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do I have to be a tradesperson to sit the Visitor & Supervisor Test?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                No. The Visitor & Supervisor Test is specifically designed for people who are not carrying out
+                                hands-on trade work. It is aimed at clients, supervisors, managers, inspectors and professional
+                                visitors who need to enter construction areas and understand the key health and safety rules.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How is this different from a standard health and safety test?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                General health and safety tests often focus on construction workers and specific trades.
+                                The Visitor & Supervisor Test is more focused on awareness, safe movement around site and
+                                supervisory responsibilities. It is tailored to people who oversee or visit work rather
+                                than those physically carrying out the tasks.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long is the test result valid for?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                In most cases, health and safety test results are treated as valid for up to five years.
+                                However, individual employers, contractors or card schemes may set their own renewal rules.
+                                It is always worth checking your company or card provider’s latest policy on refresher tests.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I book the test if I am currently outside the UK?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. You can arrange your booking from overseas, as long as you are able to attend a UK
+                                test centre (or any approved international centre, where available) on your chosen date.
+                                Many people working for UK clients or projects arrange their test ahead of travelling.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What happens if I do not pass the test first time?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                If you are not successful on your first attempt, you can normally rebook another test date.
+                                We recommend reviewing the official health and safety revision materials and focusing on the
+                                topics highlighted in your feedback before retaking the assessment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /content-section -->
+        </div> <!-- /card-wrapper -->
+    </div> <!-- /professional-container -->
+
+    <!-- FAQ toggle functionality -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle current FAQ
+                answer.classList.toggle('active');
+                icon.className = answer.classList.contains('active') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+                
+                // Close other FAQs
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer) {
+                        otherAnswer.classList.remove('active');
+                        const otherIcon = otherAnswer.previousElementSibling.querySelector('i');
+                        if (otherIcon) {
+                            otherIcon.className = 'fas fa-chevron-down';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+/* ====== GENERAL STYLING ====== */
+body {
+  font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f6f9; /* light grey professional bg */
+  color: #222;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+h1, h2, h3 {
+  color: #002d62; /* deep official blue */
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* ====== BOOK TEST SECTION ====== */
+.book-test-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.book-test-section h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #002d62; /* official blue */
+}
+
+.book-test-section p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #0e0e0e; /* black text */
+}
+
+.book-test-section p.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #4a90e2; /* light blue accent */
+}
+
+/* ====== BUTTONS ====== */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.info-button {
+  background: #4a90e2;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+
+.info-button:hover {
+  background: #357ab8;
+  transform: translateY(-2px);
+}
+
+.info-button .icon {
+  font-size: 18px;
+}
+
+/* ====== FORM CONTAINER ====== */
+form {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px 45px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+/* ====== FORM GROUP ====== */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #b5b5b5;
+  border-radius: 6px;
+  background: #fff;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0056a3;
+  box-shadow: 0 0 4px rgba(0, 86, 163, 0.3);
+  outline: none;
+}
+
+/* ====== FORM STEPS ====== */
+.form-step {
+  display: none;
+}
+.form-step.active {
+  display: block;
+}
+
+/* ====== NAVIGATION BUTTONS ====== */
+.next-btn, .prev-btn, button[type="submit"] {
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 8px 5px;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.next-btn, button[type="submit"] {
+  background: #002d62;
+  color: #fff;
+}
+
+.prev-btn {
+  background: #e0e0e0;
+  color: #222;
+}
+
+.next-btn:hover,
+.prev-btn:hover,
+button[type="submit"]:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* ====== RADIO BUTTONS ====== */
+input[type="radio"] {
+  margin-right: 6px;
+}
+
+/* ====== SUMMARY SECTION ====== */
+.summary-section {
+  background: #f9fafc;
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 6px;
+  margin-top: 25px;
+}
+
+.summary-section h2 {
+  font-size: 17px;
+  color: #002d62;
+  margin-bottom: 12px;
+}
+
+.summary-box {
+  padding: 14px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+/* ====== PROGRESS BAR (Checkmark Style) ====== */
+.progress-container {
+  width: 100%;
+  margin: 30px auto 40px;
+  max-width: 700px;
+}
+
+.progressbar {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  counter-reset: step;
+}
+
+.progressbar li {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Step Circle */
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 36px;
+  height: 36px;
+  line-height: 34px;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #f8f8f8;
+  color: #666;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+/* Connector Line */
+.progressbar li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #e0e0e0;
+  top: 17px;
+  left: -50%;
+  z-index: -1;
+  transition: background 0.4s ease;
+}
+
+.progressbar li:first-child:after {
+  content: none;
+}
+
+/* Active Step */
+.progressbar li.active {
+  color: #002d62;
+  font-weight: 600;
+}
+
+.progressbar li.active:before {
+  border-color: #002d62;
+  background: #002d62;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Completed Step (with checkmark) */
+.progressbar li.completed:before {
+  content: "✓";
+  background: #28a745;
+  border-color: #28a745;
+  color: #fff;
+  font-size: 18px;
+}
+
+.progressbar li.completed + li:after {
+  background: #28a745;
+}
+.progressbar li {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  color: white;
+  font-weight: bold;
+}
+
+.progressbar li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+
+.progressbar li:first-child:after {
+  content: none;
+}
+
+.progressbar li.active {
+  color: #3f498cf8;
+}
+
+.progressbar li.active:before {
+  background: #3f498cf8;
+}
+
+.progressbar li.active + li:after {
+  background: #3f498cf8;
+}

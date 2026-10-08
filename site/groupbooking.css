@@ -1,0 +1,100 @@
+/* ====== CONTAINER ====== */
+.group-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  background: #f4f6f9; /* ECS-style light grey bg */
+  min-height: 100vh;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ====== CARD ====== */
+.group-card {
+  background: #ffffff; /* solid white */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 35px 30px;
+  max-width: 520px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e0e6ed;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.group-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-color: #0072CE;
+}
+
+/* ====== HEADING ====== */
+.group-card h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #005BAC; /* ECS blue */
+  border-bottom: 2px solid #0072CE;
+  padding-bottom: 8px;
+}
+
+.group-card h2 i {
+  margin-right: 6px;
+  color: #0072CE;
+}
+
+/* ====== PARAGRAPH ====== */
+.group-card p {
+  font-size: 15px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ====== FORM GROUPS ====== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccd6e0;
+  font-size: 14px;
+  background: #fff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:focus {
+  border-color: #0072CE;
+  box-shadow: 0 0 5px rgba(0,114,206,0.3);
+  outline: none;
+}
+
+/* ====== BUTTON ====== */
+.group-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 15px;
+  color: #ffffff;
+  background: #0072CE;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.group-btn:hover {
+  background: #005BAC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}

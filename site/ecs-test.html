@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ SEO -->
+  <title>Book ECS Test Online | ECS Health, Safety & Specialist Tests in the UK</title>
+  <meta name="description"
+        content="Book your ECS Health, Safety & Environment test or specialist ECS assessment online. UK-wide centres, guided booking and support for electricians, FESS, network, AV and telecoms roles." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://applyecscard.co.uk/ecs-test" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Book ECS Test Online | ECS Health, Safety & Specialist Tests in the UK" />
+  <meta property="og:description"
+        content="Book ECS tests online for electrical, FESS, network, AV and telecoms roles. Simple UK-based booking with guidance and support." />
+  <meta property="og:url" content="https://applyecscard.co.uk/ecs-test" />
+  <meta property="og:site_name" content="Apply ECS" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Book ECS Test Online | ECS Health, Safety & Specialist Tests" />
+  <meta name="twitter:description"
+        content="Book ECS Health, Safety & Environment and specialist ECS tests online with UK-based support." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="ecs-test.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Book ECS Test Online",
+    "url": "https://applyecscard.co.uk/ecs-test",
+    "description": "Online booking page for ECS Health, Safety & Environment and specialist ECS tests for UK electrotechnical workers."
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Header load -->
+  <div id="header-container"></div>
+  <script src="header.js"></script>
+<style>
+    /* ================================
+   ecs-test.css – ECS Test Booking
+   ================================ */
+
+/* -------- RESET & ROOT -------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0a2540;
+  --primary-light: #1e3a8a;
+  --secondary: #1a73e8;
+  --accent: #00b894;
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-soft: #e5e7eb;
+  --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.12);
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --transition: 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(circle at top left, #eef4ff 0, #f9fafb 40%, #f5f7fb 100%);
+  line-height: 1.6;
+}
+
+main {
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 2rem 4vw 4rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* -------- HERO -------- */
+
+.hero {
+  max-width: 1160px;
+  margin: 1.5rem auto 2.5rem;
+  border-radius: 26px;
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 68%);
+  box-shadow: var(--shadow-soft);
+  padding: 1.8rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  color: #e5ecff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  background:
+    radial-gradient(circle at 0 0, rgba(96, 165, 250, 0.25) 0, transparent 55%),
+    radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.35) 0, transparent 60%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 3fr) minmax(260px, 1.8fr);
+    align-items: stretch;
+  }
+}
+
+.hero-content h1 {
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hero-content p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  max-width: 45rem;
+}
+
+.hero-content strong {
+  color: #e0f2fe;
+}
+
+.hero-list {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.hero-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.hero-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.08rem;
+  font-size: 0.85rem;
+  color: #bbf7d0;
+}
+
+/* Hero buttons */
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition),
+    border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #f9fafb;
+  box-shadow: 0 12px 24px rgba(22, 163, 74, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(22, 163, 74, 0.6);
+}
+
+.btn-ghost {
+  background: rgba(15, 23, 42, 0.35);
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
+.btn-ghost:hover {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+/* Hero stats */
+
+.hero-stats {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stat-card {
+  border-radius: 16px;
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.8rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e5ecff;
+}
+
+.stat-sub {
+  font-size: 0.78rem;
+  color: #cbd5f5;
+}
+
+/* -------- ICON ROW -------- */
+
+.ecs-icons-row {
+  max-width: 1160px;
+  margin: 0 auto 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1.1rem;
+}
+
+.ecs-card.icon-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 0.9rem 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.ecs-card.icon-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.4rem;
+}
+
+.ecs-card.icon-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  color: var(--primary);
+}
+
+.ecs-card.icon-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.ecs-card.icon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.14);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+/* -------- SECTION HEADER -------- */
+
+.ecs-tests-section {
+  max-width: 1160px;
+  margin: 0 auto 3rem;
+}
+
+.section-header {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--primary);
+}
+
+.section-header p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 45rem;
+}
+
+/* -------- ECS TESTS GRID -------- */
+
+.ecs-tests-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+}
+
+.ecs-card.test-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+}
+
+.ecs-card.test-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), transparent);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.ecs-card.test-card img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+}
+
+.ecs-card.test-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 0.9rem 0.2rem;
+  color: var(--primary);
+}
+
+.ecs-card.test-card p {
+  font-size: 0.86rem;
+  padding: 0 0.9rem 0.7rem;
+  color: var(--text-muted);
+  min-height: 3.1rem;
+}
+
+.book-btn {
+  margin: 0.1rem 0.9rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--secondary), #2563eb);
+  color: #f9fafb;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.book-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.5);
+}
+
+.ecs-card.test-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.14);
+  border-color: rgba(37, 99, 235, 0.55);
+}
+
+.ecs-card.test-card:hover::before {
+  opacity: 1;
+}
+
+/* -------- HELP NOTE -------- */
+
+.help-note {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.help-inner {
+  background: rgba(15, 23, 42, 0.03);
+  border-radius: 18px;
+  padding: 1.2rem 1.2rem;
+  border: 1px dashed rgba(148, 163, 184, 0.8);
+}
+
+.help-inner strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+}
+
+.help-inner p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .ecs-card.test-card img {
+    height: 150px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+</style>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>📇 Book Your ECS Test Online</h1>
+          <p>
+            Book your <strong>ECS Health, Safety &amp; Environment (H&amp;S)</strong>
+            or specialist <strong>ECS assessment</strong> in minutes. Choose the right
+            ECS test for your role and get <strong>UK-wide centre options, email
+            confirmation</strong> and <strong>clear guidance</strong> from our team.
+          </p>
+          <ul class="hero-list">
+            <li>Health, Safety &amp; Environment tests for all ECS cards.</li>
+            <li>Specialist ECS tests for electricians, FESS, network, AV and telecoms roles.</li>
+            <li>Online booking support if you’re unsure which ECS test you need.</li>
+          </ul>
+          <div class="hero-buttons">
+            <a href="book.html" class="btn-primary">
+              🗓️ Book ECS Test Now
+            </a>
+            <a href="#ecs-tests" class="btn-ghost">
+              View All ECS Tests
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-label">Test Types</span>
+            <span class="stat-value">20+ ECS</span>
+            <span class="stat-sub">H&amp;S and specialist routes</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Coverage</span>
+            <span class="stat-value">UK-wide</span>
+            <span class="stat-sub">Centres &amp; assessments</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Support</span>
+            <span class="stat-value">Guided</span>
+            <span class="stat-sub">Booking help available</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST CATEGORY ICON ROW -->
+    <section class="ecs-cards-container ecs-icons-row">
+      <div class="ecs-card icon-card">
+        <img src="https://img.icons8.com/color/96/000000/test-passed.png" alt="Health Safety Test icon">
+        <h3>H&amp;S Test</h3>
+        <p>Core ECS Health, Safety &amp; Environment test.</p>
+      </div>
+
+      <div class="ecs-card icon-card">
+        <img src="https://img.icons8.com/color/96/000000/electrical.png" alt="Electrical Knowledge Test icon">
+        <h3>Electrical</h3>
+        <p>Installation, maintenance, technician routes.</p>
+      </div>
+
+      <div class="ecs-card icon-card">
+        <img src="https://img.icons8.com/color/96/000000/fire-alarm.png" alt="FESS Test icon">
+        <h3>FESS</h3>
+        <p>Fire, emergency &amp; security systems tests.</p>
+      </div>
+
+      <div class="ecs-card icon-card">
+        <img src="https://img.icons8.com/color/96/000000/network.png" alt="Network & Telecoms Test icon">
+        <h3>Network &amp; Telecoms</h3>
+        <p>Data cabling &amp; telecoms assessments.</p>
+      </div>
+
+      <div class="ecs-card icon-card">
+        <img src="https://img.icons8.com/color/96/000000/video-projector.png" alt="AV & Media Test icon">
+        <h3>AV &amp; Media</h3>
+        <p>Audio visual &amp; creative production tests.</p>
+      </div>
+    </section>
+
+    <!-- ALL ECS TESTS GRID -->
+    <section id="ecs-tests" class="ecs-tests-section">
+      <header class="section-header">
+        <h2>All ECS Tests You Can Book Online</h2>
+        <p>
+          Choose the ECS test that matches your job role, qualification route or card
+          application. If you’re unsure, check your <strong>ECS card type</strong> or ask
+          your employer which test is needed.
+        </p>
+      </header>
+
+      <div class="ecs-tests-container">
+        <!-- H&S CORE -->
+        <div class="ecs-card test-card">
+          <img src="img/test/ECS H&S Test.jpg" alt="ECS H&S Test">
+          <h3>ECS H&amp;S Test</h3>
+          <p>Core Health, Safety &amp; Environment test for most ECS card routes.</p>
+          <a href="book.html" class="book-btn">Book ECS H&amp;S Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Health, Safety & Environment.jpg" alt="Health, Safety & Environment Assessment">
+          <h3>Health, Safety &amp; Environment Assessment</h3>
+          <p>Health, Safety &amp; Environment assessment used for specific ECS pathways.</p>
+          <a href="book.html" class="book-btn">Book Assessment</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Renewal H&S Test.jpg" alt="Renewal H&S Test">
+          <h3>Renewal H&amp;S Test</h3>
+          <p>For existing ECS card holders whose test is due to expire.</p>
+          <a href="book.html" class="book-btn">Book Renewal Test</a>
+        </div>
+
+        <!-- ELECTRICAL TESTS -->
+        <div class="ecs-card test-card">
+          <img src="img/test/Installation Electrician Test.jpg" alt="Installation Electrician Test">
+          <h3>Installation Electrician Test</h3>
+          <p>For workers applying for or upgrading to Installation Electrician routes.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Approved Electrician Test.jpg" alt="Approved Electrician Test">
+          <h3>Approved Electrician Test</h3>
+          <p>Professional level test for Approved Electrician grading.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Maintenance Electrician Test.jpg" alt="Maintenance Electrician Test">
+          <h3>Maintenance Electrician Test</h3>
+          <p>For maintenance-focused electrical roles and ECS cards.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Technician Test.jpg" alt="Technician Test">
+          <h3>Technician Test</h3>
+          <p>Advanced technical assessment for ECS technician routes.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <!-- FESS TESTS -->
+        <div class="ecs-card test-card">
+          <img src="img/test/FESS Apprentice Test.jpg" alt="FESS Apprentice Test">
+          <h3>FESS Apprentice Test</h3>
+          <p>Fire, Emergency &amp; Security Systems test for apprentices.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/FESS Systems Operative Test.jpg" alt="FESS Systems Operative Test">
+          <h3>FESS Systems Operative Test</h3>
+          <p>Systems operative test for FESS installation and service roles.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/FESS Technician Test.jpg" alt="FESS Technician Test">
+          <h3>FESS Technician Test</h3>
+          <p>Higher level test for FESS technicians.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/FESS Engineer Test.jpg" alt="FESS Engineer Test">
+          <h3>FESS Engineer Test</h3>
+          <p>Engineering-level FESS test for advanced roles.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <!-- NETWORK & TELECOMS -->
+        <div class="ecs-card test-card">
+          <img src="img/test/Network Infrastructure Operative Test.jpg" alt="Network Infrastructure Operative Test">
+          <h3>Network Infrastructure Operative Test</h3>
+          <p>Network infrastructure skills test for cable and data routes.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Telecommunications Fitter Test.jpg" alt="Telecommunications Fitter Test">
+          <h3>Telecommunications Fitter Test</h3>
+          <p>Telecom fitter test for ECS telecoms card routes.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Cellular Network Field Engineer Test.jpg" alt="Cellular Network Field Engineer Test">
+          <h3>Cellular Network Field Engineer Test</h3>
+          <p>Field engineer test for mobile and cellular network roles.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Signal Distribution Specialist Test.jpg" alt="Signal Distribution Specialist Test">
+          <h3>Signal Distribution Specialist Test</h3>
+          <p>Specialist test for broadcast and signal distribution systems.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <!-- AV & CREATIVE -->
+        <div class="ecs-card test-card">
+          <img src="img/test/AV Technician Test.jpg" alt="AV Technician Test">
+          <h3>AV Technician Test</h3>
+          <p>Audio visual technician test for AV ECS routes.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Broadcast & Media Supervisor Test.jpg" alt="Broadcast & Media Supervisor Test">
+          <h3>Broadcast &amp; Media Supervisor Test</h3>
+          <p>Supervisory-level assessment for broadcast and media technicians.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Creative Industries Production Test.jpg" alt="Creative Industries Production Test">
+          <h3>Creative Industries Production Test</h3>
+          <p>Production-focused test for creative and live events work.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Sound Engineer Test.jpg" alt="Sound Engineer Test">
+          <h3>Sound Engineer Test</h3>
+          <p>ECS-style test for sound engineers working in installed sound.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <!-- OTHER SPECIALIST ECS TESTS -->
+        <div class="ecs-card test-card">
+          <img src="img/test/Portable Appliance Testing (PAT) Test.jpg" alt="Portable Appliance Testing (PAT) Test">
+          <h3>Portable Appliance Testing (PAT) Test</h3>
+          <p>For workers carrying out PAT testing and electrical equipment checks.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Lecturer Assessor Test.jpg" alt="Lecturer / Assessor Test">
+          <h3>Lecturer / Assessor Test</h3>
+          <p>Test route for teaching and assessing roles in electrotechnical fields.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+
+        <div class="ecs-card test-card">
+          <img src="img/test/Visitor & Supervisor Test.jpg" alt="Visitor & Supervisor Test">
+          <h3>Visitor &amp; Supervisor Test</h3>
+          <p>For visitors and site supervisors who need ECS site access.</p>
+          <a href="book.html" class="book-btn">Book Test</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HELP NOTE -->
+    <section class="help-note">
+      <div class="help-inner">
+        <strong>Not sure which ECS test you need?</strong>
+        <p>
+          Check your <strong>ECS card type</strong>, ask your employer or training provider,
+          or contact ECS directly. You can still submit a booking request and leave a note
+          with your job title and experience if you need guidance.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

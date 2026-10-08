@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart | ECS Courses</title><meta name="robots" content="noindex">
+<style>
+body{background:#f6f7f9;font-family:'Inter','Segoe UI',Roboto,sans-serif;color:#1f2937}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 16px 60px;display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+h1{grid-column:1/-1;color:#0a2f5c;margin:0}.card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.it{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #eee}.it:last-child{border:0}
+.it .n{flex:1;font-weight:600;color:#0a2f5c}.it small{display:block;color:#6b7280;font-weight:400}
+.q{width:56px;padding:6px;border:1px solid #d1d5db;border-radius:8px}.rm{background:none;border:0;color:#d42029;cursor:pointer;font-size:20px}
+.t{display:flex;justify-content:space-between;padding:6px 0}.t.g{font-weight:800;font-size:1.2rem;border-top:2px solid #eee;margin-top:6px;padding-top:12px}
+label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}input.f{width:100%;padding:11px;border:1px solid #d1d5db;border-radius:10px;font-size:15px;box-sizing:border-box}
+.pay{width:100%;margin-top:16px;background:#d42029;color:#fff;border:0;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer}.pay:disabled{opacity:.6}
+.err{color:#d42029;font-size:13px;margin-top:8px}.empty{text-align:center;padding:30px;color:#6b7280}.empty a{color:#d42029;font-weight:700}
+.ok{grid-column:1/-1;background:#e7f7ec;color:#14532d;padding:18px;border-radius:12px;font-weight:600}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}}
+</style></head><body>
+<div class="wrap"><h1>Your Cart</h1>
+<div id="ok" class="ok" style="display:none">✅ Payment received. Thank you! Our team will contact you by email to confirm your booking.</div>
+<div class="card" id="items"></div>
+<div class="card" id="sum">
+ <div class="t"><span>Subtotal</span><span id="sub"></span></div><div class="t"><span>VAT (20%)</span><span id="vat"></span></div><div class="t g"><span>Total</span><span id="tot"></span></div>
+ <h3 style="margin:18px 0 0;color:#0a2f5c">Candidate details</h3>
+ <label>First name</label><input class="f" id="fn" autocomplete="given-name"><label>Last name</label><input class="f" id="ln" autocomplete="family-name">
+ <label>Email</label><input class="f" id="em" type="email" autocomplete="email"><label>Phone</label><input class="f" id="ph" type="tel" autocomplete="tel">
+ <div class="err" id="err"></div><button class="pay" id="pay">🔒 Pay Securely &amp; Book</button>
+ <p style="font-size:12px;color:#6b7280">You will be redirected to Stripe to pay by card.</p></div></div>
+<script src="courses-data.js"></script><script src="cart.js"></script><script src="header.js"></script>
+<script>
+const $=id=>document.getElementById(id), M=Object.fromEntries(ECS_COURSES.map(c=>[c.id,c])), gbp=n=>'£'+n.toFixed(2);
+if(location.search.includes('paid=1')){clearCart();$('ok').style.display='block';}
+function draw(){
+  const cart=getCart().filter(i=>M[i.id]);
+  $('items').innerHTML=cart.length?cart.map(i=>{const c=M[i.id];return `<div class="it"><div class="n">${c.name}<small>${c.type} · £${c.price} + VAT</small></div>
+   <input class="q" type="number" min="1" max="50" value="${i.qty}" data-id="${i.id}"><div style="width:70px;text-align:right">${gbp(c.price*i.qty)}</div><button class="rm" data-id="${i.id}" title="Remove">×</button></div>`}).join('')
+   :'<div class="empty">Your cart is empty.<br><br><a href="courses.html">Browse all ECS courses →</a></div>';
+  const sub=cart.reduce((s,i)=>s+M[i.id].price*i.qty,0);$('sub').textContent=gbp(sub);$('vat').textContent=gbp(sub*.2);$('tot').textContent=gbp(sub*1.2);
+  $('sum').style.display=cart.length?'block':'none';
+}
+$('items').addEventListener('click',e=>{const b=e.target.closest('.rm');if(b){removeFromCart(b.dataset.id);draw();}});
+$('items').addEventListener('change',e=>{if(e.target.classList.contains('q')){setQty(e.target.dataset.id,+e.target.value||1);draw();}});
+$('pay').onclick=async()=>{
+  const d={first_name:$('fn').value.trim(),last_name:$('ln').value.trim(),email:$('em').value.trim(),phone:$('ph').value.trim()};
+  if(d.first_name.length<2||d.last_name.length<2) return $('err').textContent='Please enter first and last name.';
+  if(!/^\S+@\S+\.\S+$/.test(d.email)) return $('err').textContent='Please enter a valid email.';
+  if(d.phone.replace(/\D/g,'').length<7) return $('err').textContent='Please enter a valid phone number.';
+  $('err').textContent='';$('pay').disabled=true;$('pay').textContent='Redirecting to payment…';
+  try{const r=await fetch('/api/create-checkout-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({customer:d,items:getCart()})});
+    const j=await r.json();if(!r.ok||!j.url)throw new Error(j.error||'Payment error');location.href=j.url;
+  }catch(e){$('err').textContent=e.message;$('pay').disabled=false;$('pay').textContent='🔒 Pay Securely & Book';}
+};
+draw();
+</script></body></html>
