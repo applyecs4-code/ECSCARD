@@ -1,5 +1,5 @@
 {
-  "name": "apply-ecs-netlify",
+  "name": "apply-ecs-vercel",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -8,12 +8,13 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "dev": "npx netlify-cli dev",
+    "dev": "npx vercel dev",
     "test": "node test/smoke.mjs",
     "test:flow": "node --import ./test/offline/register.mjs ./test/offline/flow.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
+    "@vercel/functions": "^3.0.0",
     "bcryptjs": "^2.4.3",
     "nodemailer": "^6.9.14"
   }

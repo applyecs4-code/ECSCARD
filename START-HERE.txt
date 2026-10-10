@@ -1,24 +1,25 @@
-APPLY ECS - Netlify + Supabase (v5 full, fixed)
+APPLY ECS - Vercel + Supabase
 
 3 STEPS TO DEPLOY (one time only):
 
 1) SUPABASE -> SQL Editor -> New query -> paste the whole content of run_all.sql -> Run
    (Creates the Cart, Live, Blogs and enquiry-cart link tables. Safe to run again.)
-   If the admin panel ever shows a "table not found / schema cache" error, it has a "Copy SQL" button right there.
+   Also create the PRIVATE storage bucket "documents" if it does not exist (schema.sql does it).
 
-2) NETLIFY -> Site configuration -> Environment variables. Add these (Netlify does not read the .env file):
-   SUPABASE_URL, SUPABASE_SERVICE_KEY, SESSION_SECRET
-   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM     <- emails will not be sent without these
-   Then Deploys -> Trigger deploy -> Clear cache and deploy.
+2) GITHUB -> push this folder (the .env file is in .gitignore, do NOT push it).
+   VERCEL -> Add New > Project > Import the GitHub repo. Vercel reads vercel.json automatically
+   (Framework Preset: Other, Build Command: node scripts/build.mjs, Output Directory: dist).
+   Before the first deploy, add the variables from .env.example under Settings > Environment Variables:
+     SUPABASE_URL, SUPABASE_SERVICE_KEY, SESSION_SECRET
+     SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM    <- emails will not be sent without these
+     STRIPE_SECRET_KEY, SITE_URL                                <- cart "Pay Securely" button
+   Tick Production + Preview. Then Deploy (or Redeploy after changing variables).
 
-3) Push this folder to GitHub. Do NOT push .env (it is in .gitignore). Drag-and-drop deploy will not work.
+3) Domain: Vercel > Settings > Domains > add applyecscard.co.uk (+ www), then update DNS as Vercel shows.
 
 LOCAL TEST:
-   node scripts/build.mjs
-   npx netlify-cli dev        -> http://localhost:8888/admin/
+   npm install
+   npx vercel dev          -> http://localhost:3000/admin/
 
 Admin: https://your-site/admin/   -> The Blogs tab has 10 draft blogs; use "Make live" to publish them.
 Details: README.md
-
-v5 fix: the admin page no longer gets stuck on "Loading..." (variable declared too late in admin.js).
-All admin panel text is now in UK English and dates use UK time (Europe/London).

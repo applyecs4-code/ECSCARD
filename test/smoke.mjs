@@ -17,9 +17,9 @@ process.env.SUPABASE_SERVICE_KEY = 'fake';
 process.env.SESSION_SECRET = 'x'.repeat(40);
 process.env.ADMIN_PASSWORD_HASH = bcrypt.hashSync('test-pass-123', 4);
 
-const { default: api } = await import('../netlify/functions/api.mjs');
-const { buildCss, sanitizeDesign } = await import('../netlify/lib/design.mjs');
-const { sniffFile, INCOMING_RE, notifyEmails } = await import('../netlify/lib/core.mjs');
+const { handler: api } = await import('../api/admin-api.mjs');
+const { buildCss, sanitizeDesign } = await import('../lib/design.mjs');
+const { sniffFile, INCOMING_RE, notifyEmails } = await import('../lib/core.mjs');
 const call = (path, { method = 'GET', body, headers = {} } = {}) =>
   api(new Request('https://x.test' + path, { method, headers: { ...(body ? { 'content-type': 'application/json' } : {}), ...headers }, body: body ? JSON.stringify(body) : undefined }), { ip: '1.2.3.4' });
 

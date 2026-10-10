@@ -1,7 +1,8 @@
-// One Netlify Function that serves the whole admin API + the public form endpoints.
+// One Vercel Function that serves the whole admin API + the public form endpoints.
+// vercel.json rewrites /admin-api/* (and the old .php / blog / css URLs) to /api/admin-api?__p=<original path>.
 import crypto from 'node:crypto';
 import {
-  BUCKET, STATUSES, ENQ_STATUSES, PROTECTED_PAGES, INCOMING_RE,
+  BUCKET, geoFrom, STATUSES, ENQ_STATUSES, PROTECTED_PAGES, INCOMING_RE,
   sb, must, json, esc, validSlug, validEmail, getSetting, setSetting, clientIp, logAction, rateLimited,
   adminCreds, checkPassword, hashPassword, makeSessionCookie, clearSessionCookie, hasSession, guard,
   notifyEmails, sendMail, mailConfigured, sniffFile,
@@ -11,8 +12,6 @@ import { slugify, safeCourseUrl, BLOG_STATUSES, indexPage, postPage, sitemapXml 
 import { BLOG_SEED } from '../lib/blog-seed.mjs';
 import { SETUP_SQL } from '../lib/setup-sql.mjs';
 
-export const config = { path: '/admin-api/*' };
-
 const MAX_FILE = 15 * 1024 * 1024;
 const MAX_ATTACH_TOTAL = 18 * 1024 * 1024;
 const FILE_KINDS = { id_file: 'ID document', photo_file: 'Applicant photo', file3: 'H&S test proof' };
@@ -20,9 +19,13 @@ const rand = () => crypto.randomBytes(12).toString('hex');
 const body = async (req) => { try { return await req.json(); } catch { return {}; } };
 const londonDay = (d) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London' }).format(d); // YYYY-MM-DD
 
-export default async (req, context) => {
+// Vercel web-standard handler: only the Request is passed in (no Netlify-style `context`), so tests may pass {ip}.
+export async function handler(req, context) {
   const url = new URL(req.url);
-  const p = url.pathname.replace(/^\/admin-api/, "").replace(/\/+$/, "") || "/";
+  // vercel.json rewrites send the original path in ?__p= ; fall back to the real pathname (direct calls / tests)
+  let p = url.searchParams.has('__p') ? url.searchParams.get('__p') : url.pathname.replace(/^\/admin-api/, '');
+  url.searchParams.delete('__p');
+  p = '/' + String(p || '').replace(/^\/+/, '').replace(/\/+$/, '');
   const m = req.method;
   const ip = clientIp(req, context);
   let r, x0;
@@ -106,10 +109,12 @@ export default async (req, context) => {
     console.error(`api ${m} ${p}:`, e);
     return json({ error: 'Server error: ' + e.message }, 500);
   }
-};
+}
+
+export default { fetch: (req) => handler(req) };
 
 // =====================================================================
-// PUBLIC: documents -> direct-to-storage upload (avoids Netlify's 6 MB request limit)
+// PUBLIC: documents -> direct-to-storage upload (avoids the ~4.5 MB Vercel request body limit)
 // =====================================================================
 async function uploadUrl(req, ip) {
   if (await rateLimited('hits', 'u:' + ip, 30, 3600)) return json({ error: 'Too many uploads. Please try again later.' }, 429);
@@ -344,7 +349,7 @@ async function menuSave(req, ip) {
   return json({ ok: true, message: 'Saved. Site par 10-20 second me update ho jayega.' });
 }
 async function hiddenPublic() {
-  const h = { 'cache-control': 'public, max-age=0, must-revalidate', 'netlify-cdn-cache-control': 'public, s-maxage=10, stale-while-revalidate=30' };
+  const h = { 'cache-control': 'public, max-age=0, must-revalidate', 'vercel-cdn-cache-control': 's-maxage=10, stale-while-revalidate=30' };
   try { const v = await getSetting('menu_hide', {}); return json({ href: v.href || [], text: v.text || [], words: v.words || [] }, 200, h); } catch { return json({ href: [], text: [], words: [] }, 200, { 'cache-control': 'public, max-age=10' }); }
 }
 
@@ -359,7 +364,7 @@ async function ping(req, ip, context) {
   const page = s(d.page), now = new Date().toISOString();
   const ua = req.headers.get('user-agent') || '';
   const device = /ipad|tablet/i.test(ua) ? 'Tablet' : /mobi|android|iphone/i.test(ua) ? 'Mobile' : 'Desktop';
-  const geo = context?.geo || {};
+  const geo = geoFrom(req, context);
   const cart = (Array.isArray(d.cart) ? d.cart : []).slice(0, 20).map((i) => ({ id: s(i?.id, 100), name: s(i?.name, 200), price: Math.max(0, Number(i?.price) || 0), qty: Math.max(1, Math.min(50, Number(i?.qty) || 1)) }));
   const email = validEmail(s(d.email)) ? s(d.email) : '';
   const activity = s(d.activity, 120), formInfo = {};
@@ -370,7 +375,7 @@ async function ping(req, ip, context) {
     if (!pages.length || pages[pages.length - 1].p !== page) { pages = [...pages, { p: page, t: now }].slice(-25); views += 1; }
     const row = {
       vid, first_seen: cur?.first_seen || now, last_seen: now, page, title: s(d.title), ref: s(d.ref), device,
-      city: s(geo.city, 80), country: s(geo.country?.name || geo.country?.code, 80), ip, views, pages, cart,
+      city: s(geo.city, 80), country: s(geo.country, 80), ip, views, pages, cart,
       name: s(d.name) || cur?.name || '', email: email || cur?.email || '', phone: s(d.phone, 50) || cur?.phone || '',
     };
     const up = await sb().from('live_visitors').upsert({ ...row, activity, form: formInfo });
@@ -398,7 +403,7 @@ async function liveList() {
 // PUBLIC: design CSS
 // =====================================================================
 async function siteCss() {
-  const h = { 'content-type': 'text/css; charset=utf-8', 'cache-control': 'public, max-age=0, must-revalidate', 'netlify-cdn-cache-control': 'public, s-maxage=60, stale-while-revalidate=300' };
+  const h = { 'content-type': 'text/css; charset=utf-8', 'cache-control': 'public, max-age=0, must-revalidate', 'vercel-cdn-cache-control': 's-maxage=60, stale-while-revalidate=300' };
   try {
     const [design, hidden, deleted] = await Promise.all([getSetting('design', {}), getSetting('hidden', []), getSetting('deleted', [])]);
     const mh = await getSetting('menu_hide', {});
@@ -449,7 +454,7 @@ async function settingsSave(req, ip) {
   if (d.test) {
     const to = await notifyEmails();
     message += (await sendMail({ to, subject: 'Test email - Apply ECS admin', html: '<p>This is a test. Booking notifications will arrive at this address.</p>' }))
-      ? ` Test email sent to ${to.join(', ')} (check spam too).` : ' Test email FAILED - check SMTP_* variables in Netlify.';
+      ? ` Test email sent to ${to.join(', ')} (check spam too).` : ' Test email FAILED - check SMTP_* variables in Vercel.';
   }
   return json({ ok: true, message });
 }
@@ -528,7 +533,7 @@ async function bookingEmail(id, req, ip) {
   const subject = String(d.subject || '').trim(), text = String(d.body || '').trim();
   if (!b || !subject || !text) return json({ error: 'Fill subject and message.' }, 400);
   const ok = await sendMail({ to: b.email, subject, html: esc(text).replace(/\n/g, '<br>'), replyTo: (await notifyEmails())[0] });
-  if (!ok) return json({ error: 'Email could not be sent (check SMTP_* variables in Netlify).' }, 502);
+  if (!ok) return json({ error: 'Email could not be sent (check SMTP_* variables in Vercel).' }, 502);
   const stamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
   must(await sb().from('bookings').update({ notes: `${b.notes || ''}\n[${stamp}] Emailed customer: ${subject}`.trim() }).eq('id', id));
   await logAction('email_customer', `#${id} ${subject}`, ip);

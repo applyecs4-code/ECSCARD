@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 process.env.SUPABASE_URL='http://x'; process.env.SUPABASE_SERVICE_KEY='k'; process.env.SESSION_SECRET='s'.repeat(40);
 process.env.ADMIN_PASSWORD_HASH='pw'; process.env.SMTP_HOST='h'; process.env.SMTP_USER='u'; process.env.SMTP_PASS='p';
-const { default: api } = await import('../../netlify/functions/api.mjs');
+const { handler: api } = await import('../../api/admin-api.mjs');
 const { sent } = await import('./mailer.mjs');
 let n = 0;
 const call = (path, { method='GET', body, headers={}, form } = {}) => api(new Request('https://x.test'+path, { method, headers: { ...(body?{'content-type':'application/json'}:{}), ...(form?{'content-type':'application/x-www-form-urlencoded'}:{}), ...headers }, body: body?JSON.stringify(body):form?new URLSearchParams(form):undefined }), { ip: '5.5.5.' + (++n) });

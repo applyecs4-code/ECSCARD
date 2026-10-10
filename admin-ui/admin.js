@@ -96,7 +96,7 @@ async function route() {
   const [, name, arg] = (location.hash || '#/home').split('/');
   if (name.split('?')[0] !== 'blogs') blogEdit = null;
   const views = { live: viewLive, home: viewHome, upcoming: viewUpcoming, header: viewHeader, bookings: viewBookings, booking: viewBooking, enquiries: viewEnquiries, blogs: viewBlogs, cart: viewCart, stats: viewStats, pages: viewPages, design: viewDesign, settings: viewSettings, account: viewAccount, log: viewLog, customers: viewCustomers, customer: viewCustomer, leads: viewLeads, reports: viewReports, search: viewSearch };
-  try { await api('/me'); } catch (e) { if (e.message !== 'login') $app.innerHTML = '<p class="err">Admin API error: ' + esc(e.message) + ' - check the terminal (netlify dev) for the error.</p>'; return; }
+  try { await api('/me'); } catch (e) { if (e.message !== 'login') $app.innerHTML = '<p class="err">Admin API error: ' + esc(e.message) + ' - check the terminal (vercel dev) or Vercel > Logs for the error.</p>'; return; }
   if (window.__live) { clearInterval(window.__live); window.__live = null; }
   drawNav(); nav(); startAlerts(); $app.innerHTML = 'Loading…';
   try { await (views[name.split('?')[0]] || viewHome)(arg); } catch (e) { fail(e); }
@@ -389,7 +389,7 @@ async function viewDesign() {
 // ---------- settings / account / log ----------
 async function viewSettings() {
   const s = await api('/settings');
-  $app.innerHTML = `<div id="msg"></div><div class="card"><h3>Booking notification emails</h3>${s.mailConfigured ? '' : '<p class="err">Email is not set up yet: add the SMTP_* variables in Netlify (see README).</p>'}
+  $app.innerHTML = `<div id="msg"></div><div class="card"><h3>Booking notification emails</h3>${s.mailConfigured ? '' : '<p class="err">Email is not set up yet: add the SMTP_* variables in Vercel (Settings > Environment Variables) (see README).</p>'}
   <p><small>Every new test booking and card application is saved in this panel AND emailed (with ID/photo attachments) to these addresses. Up to 5, separated by commas. Empty = booking@applyecscard.co.uk.</small></p>
   <form id="nf"><input class="full" name="notify" value="${esc(s.notify)}" placeholder="you@gmail.com, partner@gmail.com"><br><br><button>Save</button> <button name="test" value="1">Save + send test email</button></form></div>
   <div class="card"><h3>Customer auto-reply</h3><p><small>Customers who submit a booking or enquiry form receive a confirmation email straight away. In the text, {n} = name and {type} = form type.</small></p>
